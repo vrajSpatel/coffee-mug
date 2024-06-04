@@ -34,6 +34,35 @@ component to create
 
 --> database
     -userdata
-    -skills / experties
+        image
+        Firstname
+        lastName
+        intro
+        password
+        designation
+        company
+        experties
+        location
+        email
+        mobile
+        roles 
+        industries
+        objectives
+    -jobPosts
+        jobRole
+            role
+            seniority
+        organization
+            name
+            stage
+        experience Range
+            min to max
+        preferred Skills
+        preferred industry
+        job Description
+        job location
+        remote/site
+        public/private
+        
     -work
     -
