@@ -6,8 +6,7 @@
   flex-direction: column;
   padding: 4rem 10rem;
 }
-.footerMain > div {
-}
+
 .footerMain * {
   color: #e0e0e0;
   text-decoration: none;
@@ -44,6 +43,7 @@
   color: #e0e0e0;
   text-decoration: underline;
 }
+
 @media only screen and (max-width: 575px) {
   .footerMain {
     padding: 1rem 1rem;
