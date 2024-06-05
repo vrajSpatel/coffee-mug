@@ -1,8 +1,9 @@
+import Footer from "./Component/Footer";
 
 function App() {
   return (
     <div className="App">
-      
+      <Footer />
     </div>
   );
 }
