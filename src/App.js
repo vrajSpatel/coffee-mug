@@ -1,9 +1,11 @@
 import { Navbar } from "react-bootstrap";
+import Footer from "./Component/Footer";
 
 function App() {
   return (
     <>
-      <Navbar/> 
+      <Navbar />
+      <Footer />
     </>
   );
 }
