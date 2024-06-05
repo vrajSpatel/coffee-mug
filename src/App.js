@@ -1,9 +1,15 @@
-import Navbar from "./Component/Navbar/Navbar";
+import { Navbar } from "react-bootstrap";
 
 function App() {
   return (
     <>
-      <Navbar/> 
+      <BrowserRouter>
+        <Navbar />
+        <Routes>
+          <Route path="/" Component={Home} />
+        </Routes>
+        <Footer />
+      </BrowserRouter>
     </>
   );
 }
