@@ -1,11 +1,11 @@
-import React from 'react'
+import Navbar from 'react-bootstrap/Navbar';
 
 const Navbar = () => {
-  return (
-    <div>
-      
-    </div>
-  )
+    return (
+        <>
+            
+        </>
+    )
 }
 
 export default Navbar
