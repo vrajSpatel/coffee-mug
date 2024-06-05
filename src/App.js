@@ -1,10 +1,10 @@
-import Footer from "./Component/Footer";
+import { Navbar } from "react-bootstrap";
 
 function App() {
   return (
-    <div className="App">
-      <Footer />
-    </div>
+    <>
+      <Navbar/> 
+    </>
   );
 }
 
