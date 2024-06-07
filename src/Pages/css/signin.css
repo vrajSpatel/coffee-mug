@@ -15,11 +15,13 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    position: relative;
 }
 
 .right_signin {
     height: 100vh;
     width: 58.6%;
+    overflow: scroll;
 }
 
 .left_signin>.twoface {
@@ -29,6 +31,8 @@
 
 .left_signin>.twoface img {
     width: 100%;
+    position: absolute;
+    bottom: 0;
 }
 
 .header_logo img {
@@ -124,6 +128,10 @@ h2 span {
     opacity: 0.6;
 }
 
+.login_from input:focus{
+    box-shadow: 0 0 7px 3px orange !important;
+}
+
 .login_from label{
     font-weight: 500 !important;
 }
@@ -173,3 +181,10 @@ button :hover{
     color: #fff !important ;
     font-weight: 200 !important;
 }
+
+#mainlogin:hover{
+    background-color: transparent;
+    color: #e77b35 !important;
+    font-weight: 700 !important;
+}
+

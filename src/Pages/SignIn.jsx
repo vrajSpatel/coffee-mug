@@ -1,9 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './css/signin.css'
 import twoface from '../assests/twoface.png'
 import brand_logo from '../assests/coffee-mug_logo2.png'
 
+
 const SignIn = () => {
+    const [userdata, setuserdata] = useState({email : '', password : ''});
+    const changeuserdata = (e) => {
+        setuserdata((data)=>{return {...data,[e.target.name]:e.target.value}})
+        console.log(userdata)
+    }
     return (
         <div className='signin_main'>
             <div className="left_signin">
@@ -44,20 +50,20 @@ const SignIn = () => {
 
                     <div className="login_from">
                         <form>
-                            <div class="form-group">
-                                <label for="exampleInputEmail1">Email</label>
-                                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email" />
+                            <div className="form-group">
+                                <label htmlFor="exampleInputEmail1">Email</label>
+                                <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name='email' value={userdata.email} placeholder="Email" onChange={changeuserdata} / >
                             </div>
-                            <div class="form-group">
-                                <label for="exampleInputPassword1">Password</label>
-                                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" />
+                            <div className="form-group">
+                                <label htmlFor="exampleInputPassword1">Password</label>
+                                <input type="password" className="form-control" value={userdata.password} id="exampleInputPassword1" name='password' placeholder="Password" onChange={changeuserdata}/>
                             </div>
                             <div className="forgotpass">
                                 <a href="/">Forgot Password?</a>
                             </div>
                             <div className="loginoption_buttons">
-                                <button type="button" id='mainlogin' class="btn btn-lg">Login</button>
-                                <button type="button" id='otplogin' class="btn btn-lg">Login With OTP</button>
+                                <button type="button" id='mainlogin' className="btn btn-lg">Login</button>
+                                <button type="button" id='otplogin' className="btn btn-lg">Login With OTP</button>
                             </div>
                             <div className="oror">
                                 <center>
@@ -65,8 +71,8 @@ const SignIn = () => {
                                 </center>
                             </div>
                             <div className='other_login_option'>
-                                <button type="button" class="btn btn-lg">Continue With Google</button>
-                                <button type="button" class="btn btn-lg">Continue with Linkedin</button>
+                                <button type="button" className="btn btn-lg">Continue With Google</button>
+                                <button type="button" className="btn btn-lg">Continue with Linkedin</button>
                             </div>
                         </form>
                     </div>
