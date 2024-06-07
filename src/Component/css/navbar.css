@@ -23,7 +23,7 @@ nav{
 }
 
 .btn-outline-orange:hover {
-    color: white;
+    color: white !important;
     background-color: #e77b35;
     border-color: #e77b35;
     transition: 0.6s;

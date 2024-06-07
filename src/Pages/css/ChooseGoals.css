@@ -1,10 +1,11 @@
 .chooseGoalsMain {
   background: #f6f3f2;
   height: calc(100vh - 172px);
-  overflow-y:scroll;
+  overflow-y: scroll;
 }
+
 .continueButtonArea {
-  position: sticky;
+  position: fixed;
   bottom: 0px;
   left: 0;
   width: 100%;
@@ -14,13 +15,14 @@
   background: #fff;
   box-shadow: 0 -5px 10px -10px rgba(0, 0, 0, 0.273);
 }
-.continueButtonArea > .continueButton {
+
+.continueButtonArea>.continueButton {
   border: none;
   height: 48px;
   background: #e77b35;
   width: 25%;
   border-radius: 10px;
-  color: #fff;
+  color: #fff !important;
   font-weight: 700;
   font-size: 1.2rem;
 }
@@ -30,6 +32,7 @@
   justify-content: center;
   padding: 3rem;
 }
+
 .chooseGoals {
   width: 40%;
 }
@@ -40,7 +43,8 @@
   align-items: end;
   margin: 1rem 0;
 }
-.headerSection > .title {
+
+.headerSection>.title {
   font-size: 2.1rem;
 }
 
@@ -51,13 +55,15 @@
   gap: 10px;
   margin: 0.5rem 1rem;
 }
-.progressLine > .name {
+
+.progressLine>.name {
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 0.9rem;
 }
-.progressLine > .name > div {
+
+.progressLine>.name>div {
   color: white;
   background: #000;
   font-size: 0.7rem;
@@ -67,6 +73,7 @@
   text-align: center;
   margin: 0 2px 0 0;
 }
+
 .dashedLine {
   /* background-color:pink; */
   width: 40px;
@@ -95,11 +102,11 @@
   margin: 1.5rem 0;
 }
 
-.optionSelectorMain > .title {
+.optionSelectorMain>.title {
   font-size: 1.4rem;
 }
 
-.optionSelectorMain > .warning {
+.optionSelectorMain>.warning {
   color: red;
 }
 
@@ -107,12 +114,14 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 8px;
-  height: 160px;
+  min-height: 160px;
 }
-.options > div {
+
+.options>div {
   cursor: pointer;
 }
-.options > .nonHighlighted {
+
+.options>.nonHighlighted {
   border: 1px solid rgba(128, 128, 128, 0.33);
   border-radius: 7px;
   display: flex;
@@ -120,7 +129,8 @@
   align-items: center;
   padding: 10px;
 }
-.options > div > i {
+
+.options>div>i {
   font-size: 0.7rem;
   margin: 0 10px 0 5px;
 }
@@ -133,4 +143,17 @@
   align-items: center;
   padding: 10px;
   color: #5a9191;
+}
+
+.text a {
+  color: #e77b35;
+  font-size: 1rem;
+  font-weight: 600;
+  position: relative;
+  padding-left: 5px;
+  text-decoration: none;
+  transition: all 2.6s;
+}
+.text a:hover{
+  text-decoration: underline;
 }

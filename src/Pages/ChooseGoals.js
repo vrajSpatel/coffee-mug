@@ -17,7 +17,7 @@ function ChooseGoals() {
   const goalSelector = (element) => {
     var count = 0;
     Object.values(goals).forEach((val) =>
-      val === 1 ? (count = count + 1) : (count = count)
+      val === 1 ? (count = count + 1) : (null)
     );
     if (count >= 3) {
       if (goals[element] === 0) {
@@ -43,7 +43,7 @@ function ChooseGoals() {
           <div className="headerSection">
             <div className="title">Join For Free!</div>
             <div className="text">
-              Already a Member? <Link>Login</Link>
+              Already a Member? <Link to="/signin">Login</Link>
             </div>
           </div>
           <div className="progressLine">

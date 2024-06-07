@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import './css/signin.css'
 import twoface from '../assests/twoface.png'
 import brand_logo from '../assests/coffee-mug_logo2.png'
+import { Link } from 'react-router-dom'
 
 
 const SignIn = () => {
@@ -43,7 +44,7 @@ const SignIn = () => {
                         <div className="stepj">
                             <h3>
                                 Not a member?
-                                <a href="/">Join Now</a>
+                                <Link to="/choose-goals">Join Now</Link>
                             </h3>
                         </div>
                     </div>
@@ -59,7 +60,7 @@ const SignIn = () => {
                                 <input type="password" className="form-control" value={userdata.password} id="exampleInputPassword1" name='password' placeholder="Password" onChange={changeuserdata}/>
                             </div>
                             <div className="forgotpass">
-                                <a href="/">Forgot Password?</a>
+                                <Link to="/">Forgot Password?</Link>
                             </div>
                             <div className="loginoption_buttons">
                                 <button type="button" id='mainlogin' className="btn btn-lg">Login</button>
