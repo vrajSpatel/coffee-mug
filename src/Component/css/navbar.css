@@ -1,10 +1,19 @@
 nav{
     background-color: #fff;
+    position: absolute;
+    z-index: 9999;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: #fff;
+    transition: 0.5s;
+    padding: 24px 0;
+    height: 5rem;
 }
 
 .navbar-brand img{
-    height: 3.3em;
-    width: 13em;
+    height: 2.9em;
+    width: 12em;
 }
 
 .btn-outline-orange {
