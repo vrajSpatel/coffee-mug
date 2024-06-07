@@ -1,0 +1,136 @@
+.chooseGoalsMain {
+  background: #f6f3f2;
+  height: calc(100vh - 172px);
+  overflow-y:scroll;
+}
+.continueButtonArea {
+  position: sticky;
+  bottom: 0px;
+  left: 0;
+  width: 100%;
+  padding: 16px 24px;
+  display: grid;
+  place-items: center;
+  background: #fff;
+  box-shadow: 0 -5px 10px -10px rgba(0, 0, 0, 0.273);
+}
+.continueButtonArea > .continueButton {
+  border: none;
+  height: 48px;
+  background: #e77b35;
+  width: 25%;
+  border-radius: 10px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.chooseGoalsMain {
+  display: flex;
+  justify-content: center;
+  padding: 3rem;
+}
+.chooseGoals {
+  width: 40%;
+}
+
+.headerSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  margin: 1rem 0;
+}
+.headerSection > .title {
+  font-size: 2.1rem;
+}
+
+.progressLine {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 10px;
+  margin: 0.5rem 1rem;
+}
+.progressLine > .name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.9rem;
+}
+.progressLine > .name > div {
+  color: white;
+  background: #000;
+  font-size: 0.7rem;
+  height: 1rem;
+  width: 1rem;
+  border-radius: 50%;
+  text-align: center;
+  margin: 0 2px 0 0;
+}
+.dashedLine {
+  /* background-color:pink; */
+  width: 40px;
+  height: 1rem;
+  position: relative;
+}
+
+.dashedLine::after {
+  content: "";
+  height: 1px;
+  width: 100%;
+  border: 1px dashed black;
+  position: absolute;
+  bottom: 50%;
+  left: 0;
+}
+
+.optionSelectorMain {
+  background: #fff;
+  border: 1px solid rgba(128, 128, 128, 0.562);
+  padding: 1.5rem;
+  border-radius: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.optionSelectorMain > .title {
+  font-size: 1.4rem;
+}
+
+.optionSelectorMain > .warning {
+  color: red;
+}
+
+.options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  height: 160px;
+}
+.options > div {
+  cursor: pointer;
+}
+.options > .nonHighlighted {
+  border: 1px solid rgba(128, 128, 128, 0.33);
+  border-radius: 7px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  padding: 10px;
+}
+.options > div > i {
+  font-size: 0.7rem;
+  margin: 0 10px 0 5px;
+}
+
+.highlighted {
+  border: 2px solid #5a9191;
+  border-radius: 7px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  padding: 10px;
+  color: #5a9191;
+}
