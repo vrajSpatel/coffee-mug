@@ -16,9 +16,7 @@ const Navbar = () => {
                 </button>
                 <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
                     <ul className="navbar-nav">
-                        <li className="nav-item">
-                            <Link className="link-warning nav-link active  "  aria-current="page" to="/">Home</Link>
-                        </li>
+                        
                         <li className="nav-item">
                             <Link className="nav-link active link-warning" to="/">Jobs</Link>
                         </li>

@@ -1,0 +1,175 @@
+.signin_main {
+    display: flex;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: left;
+    background-color: #fff;
+}
+
+.left_signin {
+    background-color: #F6F3F2;
+    height: 100vh;
+    width: 41.4%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.right_signin {
+    height: 100vh;
+    width: 58.6%;
+}
+
+.left_signin>.twoface {
+    max-width: 100%;
+    height: auto;
+}
+
+.left_signin>.twoface img {
+    width: 100%;
+}
+
+.header_logo img {
+    display: table;
+    margin: 0px auto;
+    max-width: 19.6rem;
+    height: 1.7rem;
+    width: 12rem;
+}
+
+.left_signin>.infonumber {
+    margin-top: 4.2rem;
+}
+
+.left_signin .coffee_num {
+    display: flex;
+    justify-content: center;
+    gap: 6rem;
+    margin-top: 4rem;
+}
+
+h2 span {
+    font-size: 30px;
+}
+
+
+/* rightside */
+
+.right_signin {
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+}
+
+.centoright {
+    display: flex;
+    flex-direction: column;
+    padding-top: 4.6rem;
+    padding: 2rem 0rem;
+    max-width: 49.8rem;
+    margin: 0px auto;
+}
+
+.right_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 14rem;
+    margin-bottom: 0.7rem;
+    margin-top: 2rem;
+}
+
+.right_header h2{
+    font-weight: 400;
+    font-size: 36px;
+    color: #252424;
+    letter-spacing: -1.2px;
+}
+
+.stepj h3{
+    font-size: 1rem;
+    color: #5a5a5a;
+    font-weight: 600;
+}
+
+.stepj a{
+    color: #e77b35;
+    font-size: 1rem;
+    font-weight: 600;
+    position: relative;
+    padding-left:5px ;
+    text-decoration: none;
+    transition: all 2.6s ;
+}
+
+.stepj a:hover{
+    text-decoration: underline;
+}
+
+
+.loginoption_buttons{
+    display: flex;
+    gap: 0.6rem !important;
+}
+
+.login_from{
+    padding: 0 !important;
+}
+
+.login_from input{
+    margin: 0.5rem 0 0.5rem 0;
+    height: 3em !important;
+    opacity: 0.6;
+}
+
+.login_from label{
+    font-weight: 500 !important;
+}
+
+.forgotpass{
+    margin: 1rem 0 1rem 0;
+}
+
+.forgotpass a {
+    color: #e77b35;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.loginoption_buttons button{
+    width: 50% ;
+}
+
+.oror{
+    margin: 0.5rem 0 0.5rem 0;
+}
+.other_login_option{
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+}
+
+button{
+    font-weight: 700 !important;
+    font-size: 16px !important;
+    border-color: #e77b35 !important;
+    border-width: 2px !important;
+    color: #e77b35 !important;
+}
+button :hover{
+    background-color: transparent !important;
+}
+
+#mainlogin{
+    background-color: #e77b35;
+    color: #fff !important;
+    font-weight: 200 !important;
+}
+
+#otplogin:hover{
+    background-color: #e77b35;
+    color: #fff !important ;
+    font-weight: 200 !important;
+}
