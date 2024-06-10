@@ -1,7 +1,8 @@
 .chooseGoalsMain {
   background: #f6f3f2;
-  height: calc(100vh - 172px);
+  height: calc(100vh - 162px);
   overflow-y: scroll;
+  position: relative;
 }
 
 .continueButtonArea {
@@ -16,25 +17,28 @@
   box-shadow: 0 -5px 10px -10px rgba(0, 0, 0, 0.273);
 }
 
-.continueButtonArea>.continueButton {
+.continueButtonArea > .continueButton {
   border: none;
   height: 48px;
   background: #e77b35;
-  width: 25%;
+  width: 400px;
   border-radius: 10px;
   color: #fff !important;
   font-weight: 700;
   font-size: 1.2rem;
+  display: grid;
+  place-items: center;
+  text-decoration: none;
 }
 
 .chooseGoalsMain {
   display: flex;
   justify-content: center;
-  padding: 3rem;
+  /* padding: 3rem; */
 }
 
 .chooseGoals {
-  width: 40%;
+  width: 575px;
 }
 
 .headerSection {
@@ -44,26 +48,27 @@
   margin: 1rem 0;
 }
 
-.headerSection>.title {
+.headerSection > .title {
   font-size: 2.1rem;
 }
 
 .progressLine {
+  min-width: 350px;
   display: flex;
   justify-content: start;
   align-items: center;
   gap: 10px;
-  margin: 0.5rem 1rem;
+  margin: 0.5rem 0 0.5rem 1rem;
 }
 
-.progressLine>.name {
+.progressLine > .name {
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 0.9rem;
 }
 
-.progressLine>.name>div {
+.progressLine > .name > div {
   color: white;
   background: #000;
   font-size: 0.7rem;
@@ -102,11 +107,11 @@
   margin: 1.5rem 0;
 }
 
-.optionSelectorMain>.title {
+.optionSelectorMain > .title {
   font-size: 1.4rem;
 }
 
-.optionSelectorMain>.warning {
+.optionSelectorMain > .warning {
   color: red;
 }
 
@@ -117,11 +122,11 @@
   min-height: 160px;
 }
 
-.options>div {
+.options > div {
   cursor: pointer;
 }
 
-.options>.nonHighlighted {
+.nonHighlighted {
   border: 1px solid rgba(128, 128, 128, 0.33);
   border-radius: 7px;
   display: flex;
@@ -130,7 +135,7 @@
   padding: 10px;
 }
 
-.options>div>i {
+.options > div > i {
   font-size: 0.7rem;
   margin: 0 10px 0 5px;
 }
@@ -154,6 +159,118 @@
   text-decoration: none;
   transition: all 2.6s;
 }
-.text a:hover{
+.text a:hover {
   text-decoration: underline;
+}
+
+@media only screen and (max-width: 575px) {
+  .chooseGoals {
+    width: 90%;
+  }
+  .continueButtonArea > .continueButton {
+    width: 80%;
+  }
+  .options {
+    grid-template-columns: 1fr;
+  }
+}
+@media only screen and (max-width: 450px) {
+  .headerSection {
+    flex-direction: column;
+    align-items: start;
+  }
+}
+
+/* /choose-industries css */
+.categoryTitle {
+  margin: 0.5rem 0;
+  font-size: 1.2rem;
+}
+.categoryOptions {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 5px;
+  margin-bottom: 2rem;
+}
+.categoryOptions > div > i {
+  font-size: 0.7rem;
+  margin: 0 10px 0 5px;
+}
+
+.continueBinder {
+  width: 450px;
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  gap: 10px;
+}
+.continueBinder > a {
+  display: grid;
+  place-items: center;
+  border: none;
+  height: 48px;
+  font-size: 1.1rem;
+  text-decoration: none;
+}
+
+.continueBinder > .prevButton {
+  border: 2px solid #e77b35;
+  color: #e77b35 !important;
+  border-radius: 7px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.continueBinder > .prevButton > i {
+  color: #e77b35 !important;
+  font-size: 0.9rem;
+  margin: 0 0.3rem 0 0;
+}
+.continueBinder > .continueButton {
+  border-radius: 10px;
+  background: #e77b35;
+  color: #fff !important;
+}
+
+.rolesOptionsMain {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+.rolesNavigator {
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 0;
+  padding: 1rem 1rem 0 0;
+}
+.rolesNavigator > a {
+  text-decoration: none;
+  color: black;
+  border: 1px solid rgba(128, 128, 128, 0.468);
+  margin: 0.2rem 0;
+  border-radius: 10px;
+  padding: 3px 5px;
+}
+.rolesNavigator > .roleLinksHighlighted {
+  background: black !important;
+  color: white !important;
+}
+
+.rolesTitle {
+  margin: 5px 0;
+  font-size: 1.1rem;
+}
+.rolesOptions > span > .optionSelectors {
+  margin: 0 0 1.5rem 0;
+  display: grid;
+  gap: 3px;
+}
+
+.modal-backdrop {
+  display: none;
+}
+
+
+.modal{
+  background:rgba(0, 0, 0, 0.179);
+  backdrop-filter: blur(2px);
 }
