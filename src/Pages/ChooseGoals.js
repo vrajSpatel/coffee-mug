@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Navbar from "../Component/Navbar";
 import "./css/ChooseGoals.css";
 import { Link } from "react-router-dom";
+
 function ChooseGoals() {
   const [goals, setGoals] = useState({
     "Fundraising for my Startup": 0,

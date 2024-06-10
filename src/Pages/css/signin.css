@@ -85,58 +85,58 @@ h2 span {
     margin-top: 2rem;
 }
 
-.right_header h2{
+.right_header h2 {
     font-weight: 400;
     font-size: 36px;
     color: #252424;
     letter-spacing: -1.2px;
 }
 
-.stepj h3{
+.stepj h3 {
     font-size: 1rem;
     color: #5a5a5a;
     font-weight: 600;
 }
 
-.stepj a{
+.stepj a {
     color: #e77b35;
     font-size: 1rem;
     font-weight: 600;
     position: relative;
-    padding-left:5px ;
+    padding-left: 5px;
     text-decoration: none;
-    transition: all 2.6s ;
+    transition: all 2.6s;
 }
 
-.stepj a:hover{
+.stepj a:hover {
     text-decoration: underline;
 }
 
 
-.loginoption_buttons{
+.loginoption_buttons {
     display: flex;
     gap: 0.6rem !important;
 }
 
-.login_from{
+.login_from {
     padding: 0 !important;
 }
 
-.login_from input{
+input {
     margin: 0.5rem 0 0.5rem 0;
     height: 3em !important;
     opacity: 0.6;
 }
 
-.login_from input:focus{
+input:focus {
     box-shadow: 0 0 7px 3px orange !important;
 }
 
-.login_from label{
+.login_from label {
     font-weight: 500 !important;
 }
 
-.forgotpass{
+.forgotpass {
     margin: 1rem 0 1rem 0;
 }
 
@@ -146,45 +146,136 @@ h2 span {
     font-weight: 600;
 }
 
-.loginoption_buttons button{
-    width: 50% ;
+.loginoption_buttons button {
+    width: 50%;
 }
 
-.oror{
+.oror {
     margin: 0.5rem 0 0.5rem 0;
 }
-.other_login_option{
+
+.other_login_option {
     display: flex;
     flex-direction: column;
     gap: 13px;
 }
 
-button{
+button {
     font-weight: 700 !important;
     font-size: 16px !important;
     border-color: #e77b35 !important;
     border-width: 2px !important;
     color: #e77b35 !important;
 }
-button :hover{
+
+button :hover {
     background-color: transparent !important;
 }
 
-#mainlogin{
+#mainlogin {
     background-color: #e77b35;
     color: #fff !important;
     font-weight: 200 !important;
 }
 
-#otplogin:hover{
+#otplogin:hover {
     background-color: #e77b35;
-    color: #fff !important ;
+    color: #fff !important;
     font-weight: 200 !important;
 }
 
-#mainlogin:hover{
+#mainlogin:hover {
     background-color: transparent;
     color: #e77b35 !important;
     font-weight: 700 !important;
 }
 
+
+/* with phone */
+.right_header_phone {
+    display: flex;
+    flex-direction: column;
+    padding-left: 0;
+    margin-bottom: 0.7rem;
+    margin-top: 2rem;
+}
+
+.centoright_phone {
+    display: flex;
+    flex-direction: column;
+    padding-top: 4.6rem;
+    padding: 2rem 0rem;
+    max-width: 49.8rem;
+    margin: 0px auto;
+    width: 30rem;
+}
+
+.right_header_phone a {
+    color: #e77b35;
+    font-size: 1.1rem;
+    font-weight: 300;
+    position: relative;
+    padding-left: 5px;
+    text-decoration: none;
+    transition: all 0.6s;
+}
+
+.right_header_phone a:hover {
+    color: #212529;
+}
+
+.mainform_phone {
+    display: flex;
+    flex-direction: column;
+}
+
+.mainform_phone input {
+    margin: 0.5rem 0.4rem;
+}
+
+.oror_phone {
+    margin: 1rem 0 1rem 0;
+}
+
+.mainform_phone button {
+    margin-top: 1.5rem;
+    width: 99%;
+    height: 3rem;
+    background-color: #e77b35;
+    color: #fff !important;
+}
+
+.mainform_phone button:hover {
+    background-color: transparent;
+    color: #e77b35 !important;
+}
+
+.sumbutton_phone {
+    display: flex;
+    align-items: center;
+}
+
+.input-group select {
+    height: 2rem;
+}
+
+.phone-input-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.country-code-select {
+    padding: 12px;
+    font-size: 12px;
+    margin-right: 0px;
+    width: 20%;
+    height: 3rem ;
+}
+
+.phone-number-input {
+    padding: 10px;
+    font-size: 16px;
+    width: 80%;
+    height: 3rem;
+}

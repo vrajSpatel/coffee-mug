@@ -2,15 +2,19 @@ import React, { useState } from 'react'
 import './css/signin.css'
 import twoface from '../assests/twoface.png'
 import brand_logo from '../assests/coffee-mug_logo2.png'
-import { Link } from 'react-router-dom'
+import { Link ,useNavigate} from 'react-router-dom'
 
 
 const SignIn = () => {
+
+    const nevi = useNavigate();
+
     const [userdata, setuserdata] = useState({email : '', password : ''});
     const changeuserdata = (e) => {
         setuserdata((data)=>{return {...data,[e.target.name]:e.target.value}})
         console.log(userdata)
     }
+
     return (
         <div className='signin_main'>
             <div className="left_signin">
@@ -60,11 +64,11 @@ const SignIn = () => {
                                 <input type="password" className="form-control" value={userdata.password} id="exampleInputPassword1" name='password' placeholder="Password" onChange={changeuserdata}/>
                             </div>
                             <div className="forgotpass">
-                                <Link to="/">Forgot Password?</Link>
+                                <Link to="/forgotpassword">Forgot Password?</Link>
                             </div>
                             <div className="loginoption_buttons">
                                 <button type="button" id='mainlogin' className="btn btn-lg">Login</button>
-                                <button type="button" id='otplogin' className="btn btn-lg">Login With OTP</button>
+                                <button type="button" id='otplogin' onClick={()=>{nevi('/signin_phone')}} className="btn btn-lg">Login With OTP</button>
                             </div>
                             <div className="oror">
                                 <center>
