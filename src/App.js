@@ -13,14 +13,9 @@ function App() {
         <Routes>
           <Route path="/" Component={Home} />
           <Route path="/choose-goals" element={<ChooseGoals page={1} />} />
-          <Route
-            path="/choose-industries"
-            element={<ChooseGoals page={2} />}
-          />
-          <Route
-            path="/choose-roles"
-            element={<ChooseGoals page={3} />}
-          />
+          <Route path="/choose-industries" element={<ChooseGoals page={2} />} />
+          <Route path="/choose-roles" element={<ChooseGoals page={3} />} />
+          <Route path="/process-profile" element={<ChooseGoals page={4} />} />
           <Route path="/signin" Component={SignIn} />
           <Route path="/signin_phone" Component={SigninwithPhone} />
           <Route path="/forgotpassword" Component={Forgotpass} />

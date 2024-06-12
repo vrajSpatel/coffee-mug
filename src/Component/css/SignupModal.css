@@ -1,0 +1,72 @@
+.modal-content{
+    border:none !important;
+    border-radius:2rem;
+    padding:1rem;
+    width:100%;
+}
+
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modalHeader > .modalTitle {
+  font-size: 1.8rem;
+}
+.modalHeader > .loginButton {
+  color: #5a5a5a;
+}
+.loginButton > a {
+  color: #e77b35;
+  text-decoration: none;
+}
+
+.inputBoxes > input {
+  width: 100%;
+  margin: 1rem 0;
+  border-radius: 10px;
+  padding: 0 10px;
+  border:1px solid gray;
+  font-size:1.1rem;
+}
+
+.buttonsCover{
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+}
+.buttonsCover > .signupButton{
+    width:80%;
+    height:2.5rem;
+    border:none;
+    background:#e77b35;
+    color:white !important;
+    border-radius:10px;
+    display:grid;
+    place-items:center;
+    text-decoration:none;
+}
+.buttonsCover > .googleButton{
+    background:white;
+
+    color:rgb(57, 57, 57) !important;
+    height:2.5rem;
+    width:80%;
+    border:2px solid gray !important;
+    border-radius:10px;
+}
+.buttonsCover > span{
+    margin:.6rem 0;
+}
+
+.signupFooter{
+    font-size:.9rem;
+    margin:1.5rem 0 0 0;
+    color:#5a5a5a;
+}
+.signupFooter > a{
+    color:#5a5a5a;
+}

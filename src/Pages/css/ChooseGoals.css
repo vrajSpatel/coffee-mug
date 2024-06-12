@@ -269,8 +269,38 @@
   display: none;
 }
 
-
-.modal{
-  background:rgba(0, 0, 0, 0.179);
+.modal {
+  background: rgba(0, 0, 0, 0.179);
   backdrop-filter: blur(2px);
+}
+
+.profileInfoMain{
+display:grid;
+grid-template-columns: 1fr;
+gap:.7rem;
+}
+
+.smallTitle {
+  font-size: 1.1rem;
+}
+
+.fullName > .inputs,
+.workDetails > .inputs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+.fullName > .inputs > input,
+.workDetails > .inputs > input {
+  border-radius: 10px;
+  border: 1px solid gray;
+  padding: 0 0.5rem;
+}
+.profileInfoMain > div > .inputs > select,
+.profileInfoMain > div > .inputs > input {
+  width: 100%;
+  height: 3rem;
+  border-radius: 10px;
+  border: 1px solid gray;
+  padding:0 .5rem
 }
