@@ -9,7 +9,6 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        {/* <Navbar /> */}
         <Routes>
           <Route path="/" Component={Home} />
           <Route path="/choose-goals" element={<ChooseGoals page={1} />} />
@@ -25,7 +24,6 @@ function App() {
           <Route path="/signin_phone" Component={SigninwithPhone} />
           <Route path="/forgotpassword" Component={Forgotpass} />
         </Routes>
-        {/* <Footer /> */}
       </BrowserRouter>
     </>
   );
