@@ -1,52 +1,8 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import apiContext from "../Context/apiContext";
 
 const IndustriesSignup = () => {
-  const [industries, setIndustries] = useState({
-    "Popular Industries": {
-      "Consumer Internet": 0,
-      "Investor/VC": 0,
-      "Big data/AI/IOT/ Robotics": 0,
-      Fintech: 0,
-      "B2B Tech": 0,
-      Recruitment: 0,
-      Healthtech: 0,
-      "E-commerce": 0,
-      Edutech: 0,
-      Adtech: 0,
-    },
-    "All Industries": {
-      "Advertising/Digital Marketing": 0,
-      Agritech: 0,
-      Automotive: 0,
-      "B2B Services": 0,
-      Construction: 0,
-      Consulting: 0,
-      "Consumer Goods/CPG": 0,
-      "Content Production": 0,
-      Education: 0,
-      Electronics: 0,
-      Energy: 0,
-      Entertainment: 0,
-      "F&B": 0,
-      FMCG: 0,
-      "Fashion & Beauty": 0,
-      "Financial Services": 0,
-      Gaming: 0,
-      "Healthcare/Pharma": 0,
-      "Hospitality/Travel": 0,
-      "Legal Services": 0,
-      "Matrimony/Dating": 0,
-      Media: 0,
-      "Real estate": 0,
-      Retail: 0,
-      "Social Impact": 0,
-      "Software Development": 0,
-      Sports: 0,
-      "Supply Chain/Logistics": 0,
-      Sustainability: 0,
-      Telecom: 0,
-    },
-  });
+  const { industries, setIndustries } = useContext(apiContext);
   const [selectedIndustries, setSelectedIndustries] = useState(0);
   const [industriesWarning, setIndustriesWarning] = useState(false);
 
