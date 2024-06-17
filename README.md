@@ -68,5 +68,8 @@ component to create
     -
 
 
-task to be completed 
+task to be completed :
+
 -country code in login with otp
+-icon in singin 
+-contolable carousal
