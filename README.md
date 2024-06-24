@@ -73,3 +73,4 @@ task to be completed :
 -country code in login with otp
 -icon in singin 
 -contolable carousal
+-mentor page mentor company section

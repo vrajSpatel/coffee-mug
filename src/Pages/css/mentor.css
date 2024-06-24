@@ -1,0 +1,384 @@
+.Main_container_mentor {
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+
+/* header */
+.Main_container_mentor>.container_header_mentor {
+    display: flex;
+    flex-direction: column;
+    padding: 0 1.5rem 20px 1.5rem;
+
+}
+
+.container_header_mentor .centered_text_header {
+    margin-top: 20px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.container_header_mentor .centered_text_header h2 {
+    margin-bottom: 10px;
+    color: #444F60;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.container_header_mentor .centered_text_header .title-divider {
+    width: 80px;
+    height: 5px;
+    background: #e77b33 !important;
+    margin: 10px auto;
+    border-radius: 50px;
+}
+
+.container_header_mentor .info_header_text {
+    text-align: center !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.container_header_mentor .info_header_text .subtitle {
+    flex: none;
+    width: 58.33333%;
+    line-height: 1.5;
+    color: #4a4a4a;
+    font-size: 1.25rem;
+    font-weight: 400;
+}
+
+/* know your mentor */
+
+.know_your_mentor {
+    padding-top: 20px;
+}
+
+.know_your_mentor .containter_mentor h3 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    padding-bottom: 10px;
+    color: #4a4a4a;
+    text-align: center;
+}
+
+.know_your_mentor .containter_mentor .mentors_info {
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    margin-top: 25px;
+    gap: 20px;
+}
+
+.know_your_mentor .containter_mentor .mentors_info  .mentor_item{
+    height: 15rem;
+    width: 12rem;
+}
+
+.know_your_mentor .containter_mentor .mentors_info .firstrow_mentor,
+.know_your_mentor .containter_mentor .mentors_info .secondrow_mentor {
+    display: flex;
+    gap: 1rem;
+}
+
+.know_your_mentor .containter_mentor .mentors_info .job-user {
+    display: flex;
+    justify-content: center;
+}
+
+.know_your_mentor .containter_mentor .mentors_info .job-user img {
+    height: 90px;
+    width: 90px;
+    border-radius: 100%;
+}
+
+.know_your_mentor .containter_mentor .mentors_info h3{
+    font-size: 1.2rem;
+    color: #444f60;
+    font-weight: bold;
+    margin: 1rem 0 0 0;
+    padding: 0;
+}
+
+.know_your_mentor .containter_mentor .mentors_info h4{
+    font-size: 1rem;
+    font-weight: 500;
+    color: #2C3038;
+    text-align: center;
+    margin-top: 0.5rem;
+    padding: 0;
+}
+
+.know_your_mentor .containter_mentor .mentors_info p{
+    color: #8e9baf;
+    margin-bottom: 8px;
+    text-align: center;
+    font-size: small;
+}
+
+/* button */
+
+.Main_container_mentor .button_mentor-1{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.Main_container_mentor button{
+    width: 15rem;
+    height: 3rem;
+    color: white !important;
+    background-color: #e77b33;
+    border: 2px solid #e77b33;    
+    border-radius: 10px;
+    padding: 2px 15px;
+    font-weight: 600;
+    box-shadow: none !important;
+    margin: 1rem 0 2rem 0;
+    transition: 0.5s;
+}
+
+.Main_container_mentor button:hover{
+    color: #e77b33 !important;
+    background-color: white !important;
+    border-color: #e77b33 !important;
+}
+
+.goal-wrap_mentor{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.goal-wrap_mentor .container_goal_wrap{
+    border: 4px solid #e77b33;
+    border-radius: 10px;
+    padding: 20px;
+    width: 66.6667%;
+}
+
+.goal-wrap_mentor .container_goal_wrap h3{
+    font-size: 1.8rem;
+    color: #e77b33;
+    text-align: center;
+}
+
+.goal-wrap_mentor .container_goal_wrap .info_item-goalwrap{
+    margin-top: 20px;
+    text-align: center;
+    display: block;
+}
+
+.goal-wrap_mentor .container_goal_wrap .info_item-goalwrap .key-points{
+    display: inline-flex;
+    justify-content: flex-start;
+    align-items: center;    
+    align-content: center;
+    border: 2px solid #e77b33;
+    padding: 10px 12px;
+    border-radius: 4px;
+    margin: 5px;
+}
+
+.goal-wrap_mentor .info_item-goalwrap .rounded-circle {
+    background-color: rgba(0, 155, 114, 0.1);
+    border-radius: 100%;
+    height: 26px;
+    width: 26px;
+    padding: 1px 0 3px 0;
+    /* margin: 2; */
+}
+
+.goal-wrap_mentor .info_item-goalwrap h6{
+    font-size: 1rem;
+    margin-left: 0.5rem !important;
+    font-weight: 500;
+    margin-top: 8px;
+}
+
+.goal-wrap_mentor .info_item-goalwrap .rounded-circle img{
+    height: 1rem;
+    width: 1.5rem;
+}
+
+.goal-wrap_mentor .container_goal_wrap .has-text-centered{
+    margin: 30px 0 20px 0;
+    text-align: center;
+}
+
+.goal-wrap_mentor .container_goal_wrap .has-text-centered .primary-btn-1{
+    border-radius: 5px;
+    padding: 13px;
+    font-weight: 400;
+    border-color: #e77b33;
+    background-color: #e77b33;
+    color: #fff;
+    transition: all 0.5s;
+    font-size: 1.2rem;
+    margin-right: 10px;
+    height: 1.5rem;
+}
+
+.goal-wrap_mentor .container_goal_wrap .has-text-centered  .mentor-btn-2{
+    font-size: 1.5rem;
+    margin-left: 1.3rem;
+    color: #e77b33;
+    font-weight: 600;
+}
+
+/* companynames */
+.company_mentors_all{
+    background-color: #efefef;
+    margin : 30px 0;
+    height: 25rem;
+    width: 100vw;
+}
+
+
+
+/* member who find mentor */
+
+.member_who_found_mentor{
+    margin-bottom: 4rem;
+}
+
+.member_who_found_mentor .container_member_found_mentor h3{
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-align: center;
+    color: #444F60;
+    margin-bottom: 30px;
+}
+
+.member_who_found_mentor .container_member_found_mentor .all_cards_mentorfound{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.member_who_found_mentor .container_member_found_mentor .all_cards_mentorfound .card_item{
+    width: 33.3333%;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    box-shadow: 0 3px 10px 4px rgba(0, 0, 0, 0.04);
+    border: 1px solid #e5e5e5 ;
+}
+
+.member_who_found_mentor .container_member_found_mentor .all_cards_mentorfound .card_item p{
+    color: #999;
+    font-size: 0.9rem;
+    font-style: italic;
+    font-weight: 600;
+    padding: 5px 0;
+    line-height: 1.3;
+}
+
+.member_who_found_mentor .container_member_found_mentor .all_cards_mentorfound .card_member{
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: flex-start;
+    align-content: center;
+    align-items: center;
+    padding: 5px 0;
+}
+
+#card_mentor-2{
+    margin-top: 2.2rem;
+}
+
+.member_who_found_mentor .container_member_found_mentor .all_cards_mentorfound .card_member .dp img{
+    height: 50px;
+    border-radius: 100px;
+}
+
+.member_who_found_mentor .container_member_found_mentor .all_cards_mentorfound .card_member .dp_name{
+    padding: 0 10px;
+}
+
+.member_who_found_mentor .container_member_found_mentor .all_cards_mentorfound .card_member .dp_name .color-primary{
+    color: #e77b33;
+}
+
+.member_who_found_mentor .container_member_found_mentor .all_cards_mentorfound .card_member .dp_name .position{
+    font-size: 0.8rem;
+}
+
+
+/* how it works */
+
+.how_it_works_section .container_howworks h3{
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+}
+
+.how_it_works_section .container_howworks .first_row{
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 0;
+}
+
+.how_it_works_section .container_howworks .first_row .first-1{
+    width: 25%;
+    display: flex;
+    align-items: center;
+}
+
+.how_it_works_section .container_howworks .first_row .first-1 .heading-number{
+    font-size: 4.5rem;
+    color: #e77b33;
+    font-weight: 600;
+    margin-right: 10px;
+}
+
+.how_it_works_section .container_howworks .first_row .first-1 .heading-info{
+    font-size: 1.5rem;
+    color: #555;
+    text-align: left;
+    line-height: 1.2;
+}
+
+
+/* ?buttons */
+
+.has-text-centered{
+    margin: 3rem 0;
+    text-align: center;
+
+}
+
+.has-text-centered .primary-btn-1{
+    border-radius: 5px;
+    padding: 13px;
+    font-weight: 400;
+    border-color: #e77b33;
+    background-color: #e77b33;
+    color: #fff;
+    transition: all 0.5s;
+    font-size: 1.2rem;
+    margin-right: 10px;
+    height: 1.5rem;
+}
+
+ .has-text-centered .mentor-btn-2{
+    font-size: 1.5rem;
+    margin-left: 1.3rem;
+    color: #e77b33;
+    font-weight: 600;
+}

@@ -4,6 +4,7 @@ import ChooseGoals from "./Pages/ChooseGoals";
 import SignIn from "./Pages/SignIn.jsx";
 import SigninwithPhone from "./Pages/SigninwithPhone.jsx";
 import Forgotpass from "./Component/Forgotpass.jsx";
+import Mentor from "./Pages/Mentor.jsx";
 
 function App() {
   return (
@@ -20,10 +21,20 @@ function App() {
             path="/choose-roles"
             element={<ChooseGoals page={3} />}
           />
-          <Route path="/signin" Component={SignIn} />
-          <Route path="/signin_phone" Component={SigninwithPhone} />
-          <Route path="/forgotpassword" Component={Forgotpass} />
+          <Route
+            path="/signin"
+            Component={SignIn} />
+          <Route
+            path="/signin_phone"
+            Component={SigninwithPhone} />
+          <Route
+            path="/forgotpassword"
+            Component={Forgotpass} />
+          <Route
+            path="/mentors"
+            Component={Mentor}  />
         </Routes>
+
       </BrowserRouter>
     </>
   );

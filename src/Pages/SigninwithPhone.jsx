@@ -12,9 +12,9 @@ const SigninwithPhone = () => {
     //     console.log(userdata)
     // }
 
-    const [allphonedata, setallphonedata] = useState({email : '',countryCode : '' ,phoneNumber : ''});
+    const [allphonedata, setallphonedata] = useState({ email: '', countryCode: '', phoneNumber: '' });
     const handleallthing = (e) => {
-        setallphonedata((data) => { return {...data,[e.target.name] : e.target.value}})
+        setallphonedata((data) => { return { ...data, [e.target.name]: e.target.value } })
         console.log(allphonedata)
     }
 
@@ -23,7 +23,9 @@ const SigninwithPhone = () => {
             <div className="left_signin">
                 <div className="infonumber">
                     <div className="header_logo">
-                        <img src={brand_logo} alt="brand_logo" />
+                        <Link to='/'>
+                            <img src={brand_logo} alt="brand_logo" />
+                        </Link>
                     </div>
                     <div className="coffee_num">
                         <div className="counterup_item">
@@ -53,9 +55,9 @@ const SigninwithPhone = () => {
                     <div className="mainform_phone">
 
                         <label htmlFor="exampleInputEmail1">Email</label>
-                        <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name='email' placeholder="Enter Email" 
-                        onChange={handleallthing}
-                        value={allphonedata.email}    
+                        <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name='email' placeholder="Enter Email"
+                            onChange={handleallthing}
+                            value={allphonedata.email}
                         />
 
                         <div className="oror_phone">
