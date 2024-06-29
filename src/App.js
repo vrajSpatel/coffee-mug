@@ -10,13 +10,13 @@ import Messanger from "./Context/Messanger.js";
 import PostaJob from "./Pages/PostaJob.js";
 import Mentor from "./Pages/Mentor.jsx";
 import DownloadApp from "./Pages/DownloadApp.jsx";
+import Account from "./Pages/Account.js";
 
 function App() {
   return (
     <>
       <Messanger>
         <BrowserRouter>
-          {/* <Navbar /> */}
           <Routes>
             <Route path="/" Component={Home} />
             <Route path="/choose-goals" element={<ChooseGoals page={1} />} />
@@ -27,13 +27,13 @@ function App() {
             <Route path="/post-a-job" element={<PostaJob />} />
             <Route path="/recommended-jobs/*" element={<RecommendedJobs />} />
             <Route path="/signin" Component={SignIn} />
+            <Route path="/account" Component={Account} />
             <Route path="/signin_phone" Component={SigninwithPhone} />
             <Route path="/forgotpassword" Component={Forgotpass} />
             <Route path="/downloadapp" Component={DownloadApp} />
             <Route path="/mentors" Component={Mentor}/>
 
           </Routes>
-          {/* <Footer /> */}
         </BrowserRouter>
       </Messanger>
       
