@@ -20,10 +20,7 @@ function App() {
           <Routes>
             <Route path="/" Component={Home} />
             <Route path="/choose-goals" element={<ChooseGoals page={1} />} />
-            <Route
-              path="/choose-industries"
-              element={<ChooseGoals page={2} />}
-            />
+            <Route path="/choose-industries" element={<ChooseGoals page={2} />}/>
             <Route path="/choose-roles" element={<ChooseGoals page={3} />} />
             <Route path="/process-profile" element={<ChooseGoals page={4} />} />
             <Route path="/jobs" element={<Jobs />} />
@@ -32,42 +29,14 @@ function App() {
             <Route path="/signin" Component={SignIn} />
             <Route path="/signin_phone" Component={SigninwithPhone} />
             <Route path="/forgotpassword" Component={Forgotpass} />
+            <Route path="/downloadapp" Component={DownloadApp} />
+            <Route path="/mentors" Component={Mentor}/>
+
           </Routes>
           {/* <Footer /> */}
         </BrowserRouter>
       </Messanger>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" Component={Home} />
-          <Route path="/choose-goals" element={<ChooseGoals page={1} />} />
-          <Route
-            path="/choose-industries"
-            element={<ChooseGoals page={2} />}
-          />
-          <Route
-            path="/choose-roles"
-            element={<ChooseGoals page={3} />}
-          />
-          <Route
-            path="/signin"
-            Component={SignIn} />
-          <Route
-            path="/signin_phone"
-            Component={SigninwithPhone} />
-          <Route
-            path="/forgotpassword"
-            Component={Forgotpass} />
-          <Route
-            path="/mentors"
-            Component={Mentor} />
-          <Route
-            path="/downloadapp"
-            Component={DownloadApp} />
-          
-
-        </Routes>
-
-      </BrowserRouter>
+      
     </>
   );
 }
