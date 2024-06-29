@@ -5,6 +5,7 @@ import SignIn from "./Pages/SignIn.jsx";
 import SigninwithPhone from "./Pages/SigninwithPhone.jsx";
 import Forgotpass from "./Component/Forgotpass.jsx";
 import Mentor from "./Pages/Mentor.jsx";
+import DownloadApp from "./Pages/DownloadApp.jsx";
 
 function App() {
   return (
@@ -32,7 +33,12 @@ function App() {
             Component={Forgotpass} />
           <Route
             path="/mentors"
-            Component={Mentor}  />
+            Component={Mentor} />
+          <Route
+            path="/downloadapp"
+            Component={DownloadApp} />
+          
+
         </Routes>
 
       </BrowserRouter>

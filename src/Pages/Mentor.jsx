@@ -189,10 +189,6 @@ const Mentor = () => {
           </div>
         </div>
 
-        <div className="company_mentors_all">
-
-        </div>
-
         <div className="button_mentor-1">
           <button>View All Mentors</button>
         </div>

@@ -51,12 +51,12 @@ const Navbar = ({ onlyLogo }) => {
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link active link-warning" to="/">
+                  <Link target='_blank' className="nav-link active link-warning" to="https://coffeemug.ai/blog/">
                     Blog
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link active link-warning" to="/">
+                  <Link className="nav-link active link-warning" to="/downloadapp">
                     Download App
                   </Link>
                 </li>
