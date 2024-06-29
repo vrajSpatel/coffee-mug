@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import apiContext from "./apiContext";
 
 const Messanger = ({ children }) => {
@@ -174,8 +174,12 @@ const Messanger = ({ children }) => {
     Seniority: [],
     minExp: "",
     MaxExp: "",
-    Location: [],
+    Location: "",
   });
+  // useEffect(() => {
+  //   console.log(recommendedJobsFilter);
+  // }, [recommendedJobsFilter]);
+
   const [skills, setSkills] = useState({
     "Database Triggers": 0,
     "Salesforce.com Administration": 0,

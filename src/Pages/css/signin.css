@@ -159,7 +159,7 @@ input {
 }
 
 button {
-  font-weight: 700 !important;
+  /* font-weight: 700 !important; */
   font-size: 16px !important;
   border-color: #e77b35 !important;
   border-width: 2px !important;
