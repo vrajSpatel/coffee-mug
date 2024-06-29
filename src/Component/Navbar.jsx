@@ -31,7 +31,7 @@ const Navbar = ({ onlyLogo }) => {
               <ul className="navbar-nav">
                 
                 <li className="nav-item">
-                  <Link className="nav-link active link-warning" to="/">
+                  <Link className="nav-link active link-warning" to="/jobs">
                     Jobs
                   </Link>
                 </li>
