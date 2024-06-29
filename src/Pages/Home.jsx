@@ -73,40 +73,40 @@ const Home = () => {
               <div className="all_slides">
 
                 <div className="img-slide">
-                  <a href="/"><img src={uber} alt="" /></a>
+                  <a target='_blank'  href="https://www.uber.com/in/en/ride/"><img src={uber} alt="" /></a>
                 </div>
                 <div className="img-slide">
-                  <a href="/"><img src={facebook} alt="" /></a>
+                  <a target='_blank'  href="https://www.facebook.com/"><img src={facebook} alt="" /></a>
                 </div>
                 <div className="img-slide">
-                  <a href="/"><img src={amazon} alt="" /></a>
+                  <a target='_blank'  href="https://www.amazon.in/"><img src={amazon} alt="" /></a>
                 </div>
                 <div className="img-slide">
-                  <a href="/"><img src={vc100} alt="" /></a>
+                  <a target='_blank'  href="https://www.100x.vc/"><img src={vc100} alt="" /></a>
                 </div>
                 <div className="img-slide">
-                  <a href="/"><img src={cred} alt="" /></a>
+                  <a target='_blank'  href="https://cred.club/"><img src={cred} alt="" /></a>
                 </div>
                 <div className="img-slide">
-                  <a href="/"><img src={dailyhunt} alt="" /></a>
+                  <a target='_blank'  href=""><img src={dailyhunt} alt="" /></a>
                 </div>
                 <div className="img-slide">
-                  <a href="/"><img src={delo} alt="" /></a>
+                  <a target='_blank'  href="/"><img src={delo} alt="" /></a>
                 </div>
                 <div className="img-slide">
-                  <a href="/"><img src={google} alt="" /></a>
+                  <a target='_blank'  href="/"><img src={google} alt="" /></a>
                 </div>
                 <div className="img-slide">
-                  <a href="/"><img src={elevation} alt="" /></a>
+                  <a target='_blank'  href="/"><img src={elevation} alt="" /></a>
                 </div>
                 <div className="img-slide">
-                  <a href="/"><img src={matrix} alt="" /></a>
+                  <a target='_blank'  href="/"><img src={matrix} alt="" /></a>
                 </div>
                 <div className="img-slide">
-                  <a href="/"><img src={quora} alt="" /></a>
+                  <a target='_blank'  href="/"><img src={quora} alt="" /></a>
                 </div>
                 <div className="img-slide">
-                  <a href="/"><img src={softbank} alt="" /></a>
+                  <a target='_blank'  href="/"><img src={softbank} alt="" /></a>
                 </div>
 
               </div>
@@ -114,40 +114,40 @@ const Home = () => {
               <div className="all_slides">
 
                 <div className="img-slide">
-                  <a href="/"><img src={uber} alt="" /></a>
+                  <a target='_blank'  href="https://www.uber.com/in/en/ride/"><img src={uber} alt="" /></a>
                 </div>
                 <div className="img-slide">
-                  <a href="/"><img src={facebook} alt="" /></a>
+                  <a target='_blank'  href="https://www.facebook.com/"><img src={facebook} alt="" /></a>
                 </div>
                 <div className="img-slide">
-                  <a href="/"><img src={amazon} alt="" /></a>
+                  <a target='_blank'  href="https://www.amazon.in/"><img src={amazon} alt="" /></a>
                 </div>
                 <div className="img-slide">
-                  <a href="/"><img src={vc100} alt="" /></a>
+                  <a target='_blank'  href="https://www.100x.vc/"><img src={vc100} alt="" /></a>
                 </div>
                 <div className="img-slide">
-                  <a href="/"><img src={cred} alt="" /></a>
+                  <a target='_blank'  href="https://cred.club/"><img src={cred} alt="" /></a>
                 </div>
                 <div className="img-slide">
-                  <a href="/"><img src={dailyhunt} alt="" /></a>
+                  <a target='_blank'  href="/"><img src={dailyhunt} alt="" /></a>
                 </div>
                 <div className="img-slide">
-                  <a href="/"><img src={delo} alt="" /></a>
+                  <a target='_blank'  href="/"><img src={delo} alt="" /></a>
                 </div>
                 <div className="img-slide">
-                  <a href="/"><img src={google} alt="" /></a>
+                  <a target='_blank'  href="/"><img src={google} alt="" /></a>
                 </div>
                 <div className="img-slide">
-                  <a href="/"><img src={elevation} alt="" /></a>
+                  <a target='_blank'  href="/"><img src={elevation} alt="" /></a>
                 </div>
                 <div className="img-slide">
-                  <a href="/"><img src={matrix} alt="" /></a>
+                  <a target='_blank'  href="/"><img src={matrix} alt="" /></a>
                 </div>
                 <div className="img-slide">
-                  <a href="/"><img src={quora} alt="" /></a>
+                  <a target='_blank'  href="/"><img src={quora} alt="" /></a>
                 </div>
                 <div className="img-slide">
-                  <a href="/"><img src={softbank} alt="" /></a>
+                  <a target='_blank'  href="/"><img src={softbank} alt="" /></a>
                 </div>
 
               </div>
@@ -350,31 +350,31 @@ const Home = () => {
                 <div className="all_slides">
 
                   <div className="img-slide">
-                    <a href="/"><img src='https://assets.coffeemug.ai/assets/web-assets/home-v3/images/social_img/klub-logo.png' alt="klub" /></a>
+                    <a target='_blank'  href="/"><img src='https://assets.coffeemug.ai/assets/web-assets/home-v3/images/social_img/klub-logo.png' alt="klub" /></a>
                   </div>
                   <div className="img-slide">
-                    <a href="/"><img src='https://assets.coffeemug.ai/assets/web-assets/home-v3/images/social_img/lenskart-logo.png' alt="" lenskart /></a>
+                    <a target='_blank'  href="/"><img src='https://assets.coffeemug.ai/assets/web-assets/home-v3/images/social_img/lenskart-logo.png' alt="" lenskart /></a>
                   </div>
                   <div className="img-slide">
-                    <a href="/"><img src='https://assets.coffeemug.ai/assets/web-assets/home-v3/images/social_img/licious-logo.png' alt="licious" /></a>
+                    <a target='_blank'  href="/"><img src='https://assets.coffeemug.ai/assets/web-assets/home-v3/images/social_img/licious-logo.png' alt="licious" /></a>
                   </div>
                   <div className="img-slide">
-                    <a href="/"><img src='https://assets.coffeemug.ai/assets/web-assets/home-v3/images/social_img/sugar-box-logo.png' alt="sugar-box" /></a>
+                    <a target='_blank'  href="/"><img src='https://assets.coffeemug.ai/assets/web-assets/home-v3/images/social_img/sugar-box-logo.png' alt="sugar-box" /></a>
                   </div>
                   <div className="img-slide">
-                    <a href="/"><img src='https://assets.coffeemug.ai/assets/web-assets/home-v3/images/social_img/terraviewos-logo.png' alt="terraviewos" /></a>
+                    <a target='_blank'  href="/"><img src='https://assets.coffeemug.ai/assets/web-assets/home-v3/images/social_img/terraviewos-logo.png' alt="terraviewos" /></a>
                   </div>
                   <div className="img-slide">
-                    <a href="/"><img src='https://assets.coffeemug.ai/assets/web-assets/home-v3/images/social_img/yellow-ai-logo.png' alt="yellow-ai" /></a>
+                    <a target='_blank'  href="/"><img src='https://assets.coffeemug.ai/assets/web-assets/home-v3/images/social_img/yellow-ai-logo.png' alt="yellow-ai" /></a>
                   </div>
                   <div className="img-slide">
-                    <a href="/"><img src='https://assets.coffeemug.ai/assets/web-assets/home-v3/images/social_img/ganna-logo.png' alt="ganna" /></a>
+                    <a target='_blank'  href="/"><img src='https://assets.coffeemug.ai/assets/web-assets/home-v3/images/social_img/ganna-logo.png' alt="ganna" /></a>
                   </div>
                   <div className="img-slide">
-                    <a href="/"><img src='https://assets.coffeemug.ai/assets/web-assets/home-v3/images/social_img/games-kraft-logo.png' alt="games-kart" /></a>
+                    <a target='_blank'  href="/"><img src='https://assets.coffeemug.ai/assets/web-assets/home-v3/images/social_img/games-kraft-logo.png' alt="games-kart" /></a>
                   </div>
                   <div className="img-slide">
-                    <a href="/"><img src='https://assets.coffeemug.ai/assets/web-assets/home-v3/images/social_img/haptik-logo.png' alt="haptik" /></a>
+                    <a target='_blank'  href="/"><img src='https://assets.coffeemug.ai/assets/web-assets/home-v3/images/social_img/haptik-logo.png' alt="haptik" /></a>
                   </div>
 
                 </div>
@@ -382,31 +382,31 @@ const Home = () => {
                 <div className="all_slides">
 
                   <div className="img-slide">
-                    <a href="/"><img src='https://assets.coffeemug.ai/assets/web-assets/home-v3/images/social_img/klub-logo.png' alt="klub" /></a>
+                    <a target='_blank'  href="/"><img src='https://assets.coffeemug.ai/assets/web-assets/home-v3/images/social_img/klub-logo.png' alt="klub" /></a>
                   </div>
                   <div className="img-slide">
-                    <a href="/"><img src='https://assets.coffeemug.ai/assets/web-assets/home-v3/images/social_img/lenskart-logo.png' alt="" lenskart /></a>
+                    <a target='_blank'  href="/"><img src='https://assets.coffeemug.ai/assets/web-assets/home-v3/images/social_img/lenskart-logo.png' alt="" lenskart /></a>
                   </div>
                   <div className="img-slide">
-                    <a href="/"><img src='https://assets.coffeemug.ai/assets/web-assets/home-v3/images/social_img/licious-logo.png' alt="licious" /></a>
+                    <a target='_blank'  href="/"><img src='https://assets.coffeemug.ai/assets/web-assets/home-v3/images/social_img/licious-logo.png' alt="licious" /></a>
                   </div>
                   <div className="img-slide">
-                    <a href="/"><img src='https://assets.coffeemug.ai/assets/web-assets/home-v3/images/social_img/sugar-box-logo.png' alt="sugar-box" /></a>
+                    <a target='_blank'  href="/"><img src='https://assets.coffeemug.ai/assets/web-assets/home-v3/images/social_img/sugar-box-logo.png' alt="sugar-box" /></a>
                   </div>
                   <div className="img-slide">
-                    <a href="/"><img src='https://assets.coffeemug.ai/assets/web-assets/home-v3/images/social_img/terraviewos-logo.png' alt="terraviewos" /></a>
+                    <a target='_blank'  href="/"><img src='https://assets.coffeemug.ai/assets/web-assets/home-v3/images/social_img/terraviewos-logo.png' alt="terraviewos" /></a>
                   </div>
                   <div className="img-slide">
-                    <a href="/"><img src='https://assets.coffeemug.ai/assets/web-assets/home-v3/images/social_img/yellow-ai-logo.png' alt="yellow-ai" /></a>
+                    <a target='_blank'  href="/"><img src='https://assets.coffeemug.ai/assets/web-assets/home-v3/images/social_img/yellow-ai-logo.png' alt="yellow-ai" /></a>
                   </div>
                   <div className="img-slide">
-                    <a href="/"><img src='https://assets.coffeemug.ai/assets/web-assets/home-v3/images/social_img/ganna-logo.png' alt="ganna" /></a>
+                    <a target='_blank'  href="/"><img src='https://assets.coffeemug.ai/assets/web-assets/home-v3/images/social_img/ganna-logo.png' alt="ganna" /></a>
                   </div>
                   <div className="img-slide">
-                    <a href="/"><img src='https://assets.coffeemug.ai/assets/web-assets/home-v3/images/social_img/games-kraft-logo.png' alt="games-kart" /></a>
+                    <a target='_blank'  href="/"><img src='https://assets.coffeemug.ai/assets/web-assets/home-v3/images/social_img/games-kraft-logo.png' alt="games-kart" /></a>
                   </div>
                   <div className="img-slide">
-                    <a href="/"><img src='https://assets.coffeemug.ai/assets/web-assets/home-v3/images/social_img/haptik-logo.png' alt="haptik" /></a>
+                    <a target='_blank'  href="/"><img src='https://assets.coffeemug.ai/assets/web-assets/home-v3/images/social_img/haptik-logo.png' alt="haptik" /></a>
                   </div>
 
                 </div>
@@ -551,25 +551,25 @@ const Home = () => {
             <div className="all_slides">
 
               <div className="img-slide">
-                <a href="/"><img src='https://assets.coffeemug.ai/assets/web-assets/home-v3/images/social_img/your-story-logo.png' alt="" /></a>
+                <a target='_blank'  href="/"><img src='https://assets.coffeemug.ai/assets/web-assets/home-v3/images/social_img/your-story-logo.png' alt="" /></a>
               </div>
               <div className="img-slide">
-                <a href="/"><img src='https://assets.coffeemug.ai/assets/web-assets/home-v3/images/social_img/fe-logo.png' alt="" /></a>
+                <a target='_blank'  href="/"><img src='https://assets.coffeemug.ai/assets/web-assets/home-v3/images/social_img/fe-logo.png' alt="" /></a>
               </div>
               <div className="img-slide">
-                <a href="/"><img src='https://assets.coffeemug.ai/assets/web-assets/home-v3/images/social_img/bw_logo.png' alt="" /></a>
+                <a target='_blank'  href="/"><img src='https://assets.coffeemug.ai/assets/web-assets/home-v3/images/social_img/bw_logo.png' alt="" /></a>
               </div>
               <div className="img-slide">
-                <a href="/"><img src='https://assets.coffeemug.ai/assets/web-assets/home-v3/images/social_img/be-logo.png' alt="" /></a>
+                <a target='_blank'  href="/"><img src='https://assets.coffeemug.ai/assets/web-assets/home-v3/images/social_img/be-logo.png' alt="" /></a>
               </div>
               <div className="img-slide">
-                <a href="/"><img src='https://assets.coffeemug.ai/assets/web-assets/home-v3/images/social_img/entrepreneur-logo.png' alt="" /></a>
+                <a target='_blank'  href="/"><img src='https://assets.coffeemug.ai/assets/web-assets/home-v3/images/social_img/entrepreneur-logo.png' alt="" /></a>
               </div>
               <div className="img-slide">
-                <a href="/"><img src='https://assets.coffeemug.ai/assets/web-assets/home-v3/images/toi-logo.png' alt="" /></a>
+                <a target='_blank'  href="/"><img src='https://assets.coffeemug.ai/assets/web-assets/home-v3/images/toi-logo.png' alt="" /></a>
               </div>
               <div className="img-slide">
-                <a href="/"><img src='https://assets.coffeemug.ai/assets/web-assets/home-v3/images/social_img/et-logo.png' alt="" /></a>
+                <a target='_blank'  href="/"><img src='https://assets.coffeemug.ai/assets/web-assets/home-v3/images/social_img/et-logo.png' alt="" /></a>
               </div>
 
             </div>
@@ -577,25 +577,25 @@ const Home = () => {
             <div className="all_slides">
 
               <div className="img-slide">
-                <a href="/"><img src='https://assets.coffeemug.ai/assets/web-assets/home-v3/images/social_img/your-story-logo.png' alt="" /></a>
+                <a target='_blank'  href="/"><img src='https://assets.coffeemug.ai/assets/web-assets/home-v3/images/social_img/your-story-logo.png' alt="" /></a>
               </div>
               <div className="img-slide">
-                <a href="/"><img src='https://assets.coffeemug.ai/assets/web-assets/home-v3/images/social_img/fe-logo.png' alt="" /></a>
+                <a target='_blank'  href="/"><img src='https://assets.coffeemug.ai/assets/web-assets/home-v3/images/social_img/fe-logo.png' alt="" /></a>
               </div>
               <div className="img-slide">
-                <a href="/"><img src='https://assets.coffeemug.ai/assets/web-assets/home-v3/images/social_img/bw_logo.png' alt="" /></a>
+                <a target='_blank'  href="/"><img src='https://assets.coffeemug.ai/assets/web-assets/home-v3/images/social_img/bw_logo.png' alt="" /></a>
               </div>
               <div className="img-slide">
-                <a href="/"><img src='https://assets.coffeemug.ai/assets/web-assets/home-v3/images/social_img/be-logo.png' alt="" /></a>
+                <a target='_blank'  href="/"><img src='https://assets.coffeemug.ai/assets/web-assets/home-v3/images/social_img/be-logo.png' alt="" /></a>
               </div>
               <div className="img-slide">
-                <a href="/"><img src='https://assets.coffeemug.ai/assets/web-assets/home-v3/images/social_img/entrepreneur-logo.png' alt="" /></a>
+                <a target='_blank'  href="/"><img src='https://assets.coffeemug.ai/assets/web-assets/home-v3/images/social_img/entrepreneur-logo.png' alt="" /></a>
               </div>
               <div className="img-slide">
-                <a href="/"><img src='https://assets.coffeemug.ai/assets/web-assets/home-v3/images/toi-logo.png' alt="" /></a>
+                <a target='_blank'  href="/"><img src='https://assets.coffeemug.ai/assets/web-assets/home-v3/images/toi-logo.png' alt="" /></a>
               </div>
               <div className="img-slide">
-                <a href="/"><img src='https://assets.coffeemug.ai/assets/web-assets/home-v3/images/social_img/et-logo.png' alt="" /></a>
+                <a target='_blank'  href="/"><img src='https://assets.coffeemug.ai/assets/web-assets/home-v3/images/social_img/et-logo.png' alt="" /></a>
               </div>
 
             </div>
