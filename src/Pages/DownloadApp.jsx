@@ -19,7 +19,7 @@ const DownloadApp = () => {
                             <h1>
                                 Download our mobile app
                                 <br />
-                                <mark data-aos="highlight-text" data-aos-delay="250" class="aos-init aos-animate">For better experience</mark>
+                                <mark data-aos="highlight-text" data-aos-delay="250" className="aos-init aos-animate">For better experience</mark>
                             </h1>
 
                             <div className="imgage">
@@ -40,7 +40,7 @@ const DownloadApp = () => {
                         </div>
 
                         <div className="image_app">
-                            <img class="app-banner" alt="app-imagea" src="https://assets.coffeemug.ai/assets/images/app.png?v=1" />
+                            <img className="app-banner" alt="app-imagea" src="https://assets.coffeemug.ai/assets/images/app.png?v=1" />
                         </div>
 
                     </div>

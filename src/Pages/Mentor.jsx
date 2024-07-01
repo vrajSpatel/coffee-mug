@@ -212,11 +212,11 @@ const Mentor = () => {
                 </div>
                 <div className="card_member">
                   <div className="dp">
-                    <img class="" src="https://assets.coffeemug.ai/assets/images/users/pooja_gupta.jpg" alt="pooja gupta" data-demo-src="images/users/pooja_gupta.jpg" />
+                    <img className="" src="https://assets.coffeemug.ai/assets/images/users/pooja_gupta.jpg" alt="pooja gupta" data-demo-src="images/users/pooja_gupta.jpg" />
                   </div>
                   <div className="dp_name">
-                    <div class="name"><strong class="color-primary">Pooja Gupta</strong></div>
-                    <div class="position">Founding Member, Head Marketing Imagin8ors</div>
+                    <div className="name"><strong className="color-primary">Pooja Gupta</strong></div>
+                    <div className="position">Founding Member, Head Marketing Imagin8ors</div>
                   </div>
                 </div>
               </div>
@@ -231,11 +231,11 @@ const Mentor = () => {
                 </div>
                 <div className="card_member" id='card_mentor-2'>
                   <div className="dp">
-                    <img class="" src="https://assets.coffeemug.ai/assets/images/users/niranjana.jpg" alt="Niranjana Selvam" data-demo-src="images/users/pooja_gupta.jpg" />
+                    <img className="" src="https://assets.coffeemug.ai/assets/images/users/niranjana.jpg" alt="Niranjana Selvam" data-demo-src="images/users/pooja_gupta.jpg" />
                   </div>
                   <div className="dp_name">
-                    <div class="name"><strong class="color-primary">Niranjana Selvam</strong></div>
-                    <div class="position">Founder - The Baker Ninja, Chennai</div>
+                    <div className="name"><strong className="color-primary">Niranjana Selvam</strong></div>
+                    <div className="position">Founder - The Baker Ninja, Chennai</div>
                   </div>
                 </div>
               </div>

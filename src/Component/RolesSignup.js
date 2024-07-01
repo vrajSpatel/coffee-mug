@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import apiContext from "../Context/apiContext";
 
 const RolesSignup = () => {
-  const { roles, setRoles } = useContext(apiContext);
+  const { roles, setRoles, signup } = useContext(apiContext);
   const [selectedRoles, setSelectedRoles] = useState(0);
   const [rolesWarning, setRolesWarning] = useState(false);
   const [navigatorHighlight, setNavigatorHighlight] = useState("Popular");

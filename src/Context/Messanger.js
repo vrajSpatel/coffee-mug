@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from "react";
 import apiContext from "./apiContext";
 
+
 const Messanger = ({ children }) => {
+  const url = "http://localhost:5000"
+
   const [roles, setRoles] = useState({
     Popular: {
       Founder: 0,
@@ -203,6 +206,23 @@ const Messanger = ({ children }) => {
     "Customer Service Management": 0,
   });
 
+
+  const signup = async (roles,industries,objectives,email,password)=>{
+    
+    const result = await fetch(`${url}/api/auth/createuser`,{
+      method:"POST",
+      headers:{
+        "Content-Type":"application/json"
+      },
+      body:JSON.stringify({
+        roles,industries,objectives,email,password
+      })
+    })
+
+    console.log(result)
+
+  }
+
   return (
     <apiContext.Provider
       value={{
@@ -214,6 +234,7 @@ const Messanger = ({ children }) => {
         setIndustries,
         skills,
         setSkills,
+        signup,
       }}
     >
       {children}
