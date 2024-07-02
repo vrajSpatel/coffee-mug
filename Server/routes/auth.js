@@ -22,7 +22,7 @@ router.post('/createUser', async (req, res) => {
     console.log(req.body) // user data
 
     try {
-        const { roles, objectives, industries, email, password } = req.body;
+        const { roles, objectives, industries, email } = req.body;
 
         if (roles.length === 0 || objectives.length === 0 || industries.length === 0) {
             res.status(400).json({ error: "plese select preferences" })
@@ -39,7 +39,7 @@ router.post('/createUser', async (req, res) => {
         const salt = await bcrypt.genSalt(10);
         const secpass = await bcrypt.hash(req.body.password, salt); //join salt automaticaly in bcrypt
 
-        user = await User.create({  //send data to database
+        const user = await User.create({  //send data to database
             email: email,
             roles,
             industries,

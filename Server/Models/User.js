@@ -12,6 +12,7 @@ const UserSchema = new mongoose.Schema({
         required: true,
         unique: true   //to make it unique
     },
+    //workon
     profileImage: {
         type: String,
     },
