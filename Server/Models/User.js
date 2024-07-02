@@ -12,14 +12,12 @@ const UserSchema = new mongoose.Schema({
         required: true,
         unique: true   //to make it unique
     },
+    //workon
     profileImage: {
         type: String,
     },
-    bio: {
+    desciption: {
         type: String,
-    },
-    experties: {
-        type: [String],
     },
     mobile: {
         type: String
@@ -43,7 +41,7 @@ const UserSchema = new mongoose.Schema({
     company: {
         type: String,
     },
-    location: {
+    city: {
         type: String,
     },
     date: {

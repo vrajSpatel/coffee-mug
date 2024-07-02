@@ -9,8 +9,10 @@ const fetchuser = async (req, res, next) => {
     }
     try {
         const data = await jwt.verify(token, jwt_secret)
-        req.user = data.user;
+        // console.log(data)
+        req.user = data;
         next();//must
+        
     } catch (error) {
         res.status(401).send({ error: "please authenticate with valid token" })
     }

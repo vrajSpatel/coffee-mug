@@ -4,8 +4,13 @@ import ChooseGoals from "./Pages/ChooseGoals";
 import SignIn from "./Pages/SignIn.jsx";
 import SigninwithPhone from "./Pages/SigninwithPhone.jsx";
 import Forgotpass from "./Component/Forgotpass.jsx";
+import Jobs from "./Pages/Jobs.js";
+import RecommendedJobs from "./Pages/RecommendedJobs.js";
+import Messanger from "./Context/Messanger.js";
+import PostaJob from "./Pages/PostaJob.js";
 import Mentor from "./Pages/Mentor.jsx";
 import DownloadApp from "./Pages/DownloadApp.jsx";
+import Account from "./Pages/Account.js";
 
 function App() {
   return (
@@ -22,25 +27,10 @@ function App() {
             path="/choose-roles"
             element={<ChooseGoals page={3} />}
           />
-          <Route
-            path="/signin"
-            Component={SignIn} />
-          <Route
-            path="/signin_phone"
-            Component={SigninwithPhone} />
-          <Route
-            path="/forgotpassword"
-            Component={Forgotpass} />
-          <Route
-            path="/mentors"
-            Component={Mentor} />
-          <Route
-            path="/downloadapp"
-            Component={DownloadApp} />
-          
-
+          <Route path="/signin" Component={SignIn} />
+          <Route path="/signin_phone" Component={SigninwithPhone} />
+          <Route path="/forgotpassword" Component={Forgotpass} />
         </Routes>
-
       </BrowserRouter>
     </>
   );
