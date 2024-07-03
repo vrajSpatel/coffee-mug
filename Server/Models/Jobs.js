@@ -39,11 +39,9 @@ const JobSchema = new mongoose.Schema({
     },
     jobDescription:{
         type:String,
-        // required : true
     },
     city :{
         type:String,
-        // required : true
     },
     remoteLocation:{
         type: Boolean,
