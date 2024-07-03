@@ -10,8 +10,6 @@ import Jobs from "./Pages/Jobs.js";
 import RecommendedJobs from "./Pages/RecommendedJobs.js";
 import Messanger from "./Context/Messanger.js";
 import PostaJob from "./Pages/PostaJob.js";
-import Mentor from "./Pages/Mentor.jsx";
-import DownloadApp from "./Pages/DownloadApp.jsx";
 import Account from "./Pages/Account.js";
 
 function App() {
