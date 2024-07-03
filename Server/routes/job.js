@@ -64,6 +64,7 @@ router.post("/recommendedjobs", async (req, res) => {
 
     const finded = await Jobs.aggregate([
       {
+       $match :{
         $or: [
           { Role: { $in: Roles } },
           { PreferredIndustries: { $in: Industries } },
@@ -71,16 +72,19 @@ router.post("/recommendedjobs", async (req, res) => {
           { city: Location },
           { MinExp: { $lt: minExp } },
           { MaxExp: { $gt: MaxExp } },
-        ],
+        ]
+       }
       },
+
       {
         $lookup: {
-          from: "",
-          localField: "",
-          foreignField: "",
-          as: "",
+          from: "userdatas",
+          localField: "email",
+          foreignField: "email",
+          as: "profiledetails",
         },
-      },
+      }
+
     ]);
     res.json(finded);
     // [{email},{email2},{}]
