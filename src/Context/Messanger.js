@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
 import apiContext from "./apiContext";
 
-
 const Messanger = ({ children }) => {
-  const url = "http://localhost:5000"
+  const url = "http://localhost:5000";
 
   const [roles, setRoles] = useState({
     Popular: {
@@ -179,9 +178,6 @@ const Messanger = ({ children }) => {
     MaxExp: "",
     Location: "",
   });
-  // useEffect(() => {
-  //   console.log(recommendedJobsFilter);
-  // }, [recommendedJobsFilter]);
 
   const [skills, setSkills] = useState({
     "Database Triggers": 0,
@@ -206,22 +202,59 @@ const Messanger = ({ children }) => {
     "Customer Service Management": 0,
   });
 
+  const [jobs, setJobs] = useState([
+    {
+      Role: "ai/ml",
+      Seniority: "mid",
+      Name: "dk",
+      Stage: "none",
+      MinExp: "1",
+      MaxExp: "5",
+      time: "100d ago",
+      PreferredSkills: ["muthi"],
+      PreferredIndustries: ["phub", "hello"],
+      jobDescription: "nothing",
+      city: "vadodara",
+      remoteLocation: true,
+      FoundingYear: "1998",
+      profileImage:
+        "https://th.bing.com/th/id/OIP.PYipJ_hSncugM2SwnZitvgHaEK?w=284&h=180&c=7&r=0&o=5&dpr=1.4&pid=1.7",
+      profileName: "venna remen",
+      profileDesignation: "a",
+      profileCompany: "b",
+    },
+  ]);
 
-  const signup = async (roles,industries,objectives,email,password)=>{
-    
-    const result = await fetch(`${url}/api/auth/createuser`,{
-      method:"POST",
-      headers:{
-        "Content-Type":"application/json"
+  const signup = async (roles, industries, objectives, email, password) => {
+    const result = await fetch(`${url}/api/auth/createuser`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
       },
-      body:JSON.stringify({
-        roles,industries,objectives,email,password
-      })
-    })
+      body: JSON.stringify({
+        roles,
+        industries,
+        objectives,
+        email,
+        password,
+      }),
+    });
 
-    console.log(result)
+    console.log(result);
+  };
 
-  }
+  const fetchRecommendedJobs = async (recommendedJobsFilter) => {
+    var result = await fetch(`${url}/api/jobs/recommendedjobs`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(recommendedJobsFilter),
+    });
+    result = result.json();
+    console.log(result);
+    setJobs(result);
+  };
 
   return (
     <apiContext.Provider
@@ -235,6 +268,8 @@ const Messanger = ({ children }) => {
         skills,
         setSkills,
         signup,
+        jobs,
+        setJobs,
       }}
     >
       {children}

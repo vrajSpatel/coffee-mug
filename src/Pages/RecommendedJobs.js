@@ -5,10 +5,17 @@ import Footer from "../Component/Footer";
 import apiContext from "../Context/apiContext";
 import SelectContainer from "../Component/SelectContainer";
 import LocationSelect from "../Component/LocationSelect";
+import { Link } from "react-router-dom";
 
 const RecommendedJobs = () => {
-  const { recommendedJobsFilter, setRecommendedJobsFilter, roles, industries } =
-    useContext(apiContext);
+  const {
+    recommendedJobsFilter,
+    setRecommendedJobsFilter,
+    roles,
+    industries,
+    jobs,
+    setJobs,
+  } = useContext(apiContext);
   const [seniority] = useState({
     seniority: {
       "CXO/C-Suite": 0,
@@ -151,9 +158,79 @@ const RecommendedJobs = () => {
           </div>
         </div>
         <div className="jobsPosts">
-          <div className="jobsPost">post</div>
-          <div className="jobsPost">post</div>
-          <div className="jobsPost">post</div>
+          {jobs.length !== 0 ? (
+            jobs?.map((element, index) => {
+              return (
+                <div key={index} className="jobsPost">
+                  <div className="header">
+                    <div className="firstSection">
+                      <div className="highlightOrange">
+                        <div className="seniority">{element.Seniority}</div>
+                        <div className="roles">{element.Role}</div> -
+                      </div>
+                      <div className="industryName">{element.Name}</div>
+                    </div>
+                    <div className="secondSection">{element.time}</div>
+                  </div>
+                  <div className="midContainer">
+                    <div className="internalContainer">
+                      <div className="title">Experience Range</div>
+                      <div className="content">
+                        {element.MinExp} - {element.MaxExp} Years
+                      </div>
+                    </div>
+                    <div className="internalContainer">
+                      <div className="title">Location</div>
+                      <div className="content">
+                        {element.remoteLocation ? (
+                          <div>Remote Location</div>
+                        ) : (
+                          <div>{element.city}</div>
+                        )}
+                      </div>
+                    </div>
+                    <div className="internalContainer">
+                      <div className="title">Founding Year</div>
+                      <div className="content">{element.FoundingYear}</div>
+                    </div>
+                    <div className="internalContainer">
+                      <div className="title">Industry</div>
+                      <div className="content">
+                        {element.PreferredIndustries.map((industry, index) => {
+                          return index ===
+                            element.PreferredIndustries.length - 1
+                            ? `${industry}`
+                            : `${industry},`;
+                        })}
+                      </div>
+                    </div>
+                  </div>
+                  <div className="userDetails">
+                    <div className="headerTitle">Job Posted:</div>
+                    <div className="userContainer">
+                      <div className="profileImage">
+                        <img src={element.profileImage} alt="profileImage" />
+                      </div>
+                      <div className="userDetails">
+                        <div className="profileName">{element.profileName}</div>
+                        <div className="profileDesignation">
+                          {element.profileDesignation}
+                        </div>
+                        <div className="profileCompany">
+                          {element.profileCompany}
+                        </div>
+                      </div>
+                      <div className="moreDetails">
+                        <Link to="/job-details">{"Details >"}</Link>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              );
+            })
+          ) : (
+            <div>No Matching Job Posts</div>
+          )}
         </div>
       </div>
       <Footer />

@@ -4,6 +4,7 @@ import Footer from "../Component/Footer";
 import "./css/Account.css";
 import graphImage from "../assests/graph-question.png";
 import LocationSelect from "../Component/LocationSelect";
+import { Link } from "react-router-dom";
 const Account = () => {
   const [firstSection, setFirstSection] = useState({
     profileImage:
@@ -12,14 +13,15 @@ const Account = () => {
     designation: "a",
     company: "b",
     intro: "hello world",
-    objectives: [
-      "Raise Funding",
-      "account",
-      "6Q6jGPpFFvD5aC6pojrwHaEK?w=315&h=180&c=7&r=0&",
-    ],
+    objectives: ["Raise Funding"],
     roles: ["Founder"],
     industries: ["Edutech"],
-    experties: ["Admin"],
+    location: "",
+    email: "dharmik7458@gmail.com",
+    phone: "9723361679",
+    newMatch: "Every Week",
+    AccountStatus: "Active",
+    wappNotification: "",
   });
   return (
     <>
@@ -95,23 +97,20 @@ const Account = () => {
               <div className="internalTitle">Profile Info</div>
               <div className="inputSection">
                 <div className="input">
-                  Designation
-                  <input type="text" name="designation" />
+                  <label htmlFor="accountDesignation">Designation</label>
+                  <input
+                    type="text"
+                    id="accountDesignation"
+                    name="designation"
+                  />
                 </div>
                 <div className="input">
-                  Company
-                  <input type="text" name="company" />
+                  <label htmlFor="accountCompany">Company</label>
+                  <input type="text" id="accountCompany" name="company" />
                 </div>
                 <button className="Button">Update</button>
               </div>
-              {/* <div className="expertiesCover">
-                <div className="title">Experties</div>
-                <div className="experties">
-                  {firstSection.experties.map((element) => {
-                    return <div className="expItem">{element}</div>;
-                  })}
-                </div>
-              </div> */}
+
               <div className="inputSection">
                 <div className="input">
                   Location <LocationSelect />
@@ -121,16 +120,48 @@ const Account = () => {
             </div>
             <div className="internalDiv">
               <div className="internalTitle">Contact Info</div>
+              <div className="inputSection">
+                <div className="input">
+                  <label htmlFor="accountEmail">Email</label>
+                  <input type="text" id="accountEmail" name="email" />
+                </div>
+                <div className="input">
+                  <label htmlFor="accountPhone">Phone</label>
+                  <input type="text" id="accountPhone" name="phone" />
+                </div>
+                <button className="Button">Update</button>
+              </div>
             </div>
             <div className="internalDiv">
-              <div className="internalTitle">New Match</div>
+              <div className="internalTitle">
+                <div className="inlineContainer">
+                  New Match :
+                  <div className="highlighteOrange">
+                    {firstSection.newMatch}
+                  </div>
+                  <button className="Button">Change</button>
+                </div>
+              </div>
             </div>
             <div className="internalDiv">
-              <div className="internalTitle">Account Status</div>
+              <div className="internalTitle">
+                <div className="inlineContainer">
+                  Account Status :
+                  <div className="highlighteOrange">
+                    {firstSection.AccountStatus}
+                  </div>
+                </div>
+                <div className="grayBoldFont">
+                  our account is active and you will receive weekly matches.
+                </div>
+                <div className="grayNormalFont">
+                  Too busy to connect this week? Snooze account to disable new
+                  introductions.
+                </div>
+                <button className="snoozeButton">Snooze</button>
+              </div>
             </div>
-            <div className="internalDiv">
-              <div className="internalTitle">Whatsapp Notifications</div>
-            </div>
+            <Link className="deleteAccount">delete Account</Link>
           </div>
         </div>
       </div>
