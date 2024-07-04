@@ -1,4 +1,4 @@
-import React, { useContext }   from "react";
+import React, { useContext, useState } from "react";
 import Navbar from "../Component/Navbar";
 import { Link } from "react-router-dom";
 import SignupModal from "../Component/SignupModal";
@@ -11,8 +11,8 @@ import apiContext from "../Context/apiContext";
 
 function ChooseGoals({ page }) {
 
-  const {signup} = useContext(apiContext)
-  
+  const { signup } = useContext(apiContext);
+
   return (
     <>
       <Navbar onlyLogo={true} />

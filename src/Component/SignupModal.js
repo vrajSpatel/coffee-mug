@@ -1,20 +1,24 @@
-import React, { useState } from "react";
+import React, { useContext, useRef } from "react";
 import { Link } from "react-router-dom";
 import "./css/SignupModal.css";
+import apiContext from "../Context/apiContext";
 
 const SignupModal = () => {
-  const [signupData, setSignupData] = useState({
-    email: "hello",
-    password: "",
-  });
+  const { goals, roles, industries, signupData, setSignupData, signupAPI } =
+    useContext(apiContext);
 
+  const processRef = useRef();
   const changeSignupData = (e) => {
-    console.log(e.target.name, e.target.value);
     setSignupData((signupdata) => {
-      console.log(signupdata);
       return { ...signupdata, [e.target.name]: e.target.value };
     });
   };
+
+  const signupHandler = async () => {
+    // console.log(goals, roles, industries);
+    console.log(await signupAPI(goals, roles, industries, signupData));
+  };
+
   return (
     <div
       className="modal fade"
@@ -64,13 +68,14 @@ const SignupModal = () => {
             </div>
             <div className="buttonsCover">
               <Link
-                to="/process-profile"
                 className="signupButton"
                 data-bs-toggle="modal"
                 data-bs-target="#signupModal"
+                onClick={signupHandler}
               >
                 Signup
               </Link>
+              <Link to="/process-profile" ref={processRef}></Link>
               <span>or continue with</span>
               <button className="googleButton">Google</button>
             </div>
