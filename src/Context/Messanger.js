@@ -3,10 +3,28 @@ import apiContext from "./apiContext";
 
 const Messanger = ({ children }) => {
   const url = "http://localhost:5000";
-
+  const [authToken, setAuthToken] = useState("");
+  const cookieSetter = (name, value) => {
+    document.cookie = `${name}=${value};max-age=${3600 * 24 * 10}`;
+  };
+  const cookieFetcher = (name) => {
+    console.log(document.cookie);
+  };
+  const [signupData, setSignupData] = useState({
+    email: "DP1@gmail.com",
+    password: "DP1",
+  });
+  const [goals, setGoals] = useState({
+    "Fundraising for my Startup": 1,
+    "Invest in Startups": 0,
+    "Find a Job": 0,
+    "Hire Talent": 0,
+    "Brainstorm Ideas": 0,
+    "I don't have a specific Goal": 0,
+  });
   const [roles, setRoles] = useState({
     Popular: {
-      Founder: 0,
+      Founder: 1,
       "Investor / VC  ": 0,
       "Angel Investor": 0,
       "COO, CBO, CEO": 0,
@@ -125,7 +143,7 @@ const Messanger = ({ children }) => {
   });
   const [industries, setIndustries] = useState({
     "Popular Industries": {
-      "Consumer Internet": 0,
+      "Consumer Internet": 1,
       "Investor/VC": 0,
       "Big data/AI/IOT/ Robotics": 0,
       Fintech: 0,
@@ -224,9 +242,37 @@ const Messanger = ({ children }) => {
       profileCompany: "b",
     },
   ]);
-
-  const signup = async (roles, industries, objectives, email, password) => {
-    const result = await fetch(`${url}/api/auth/createuser`, {
+  const selector1degree = (obj) => {
+    var arr = [];
+    Object.keys(obj).map((element) => {
+      if (obj[element] === 1) {
+        arr.push(element);
+      } else {
+        return;
+      }
+    });
+    return arr;
+  };
+  const selector2degree = (obj) => {
+    var arr = [];
+    Object.keys(obj).map((element) => {
+      Object.keys(obj[element]).map((subElement) => {
+        if (obj[element][subElement] === 1) {
+          arr.push(subElement);
+        } else {
+          return;
+        }
+      });
+    });
+    return arr;
+  };
+  const signupAPI = async (objectives, roles, industries, signupData) => {
+    console.log(objectives);
+    roles = selector2degree(roles);
+    industries = selector2degree(industries);
+    var objectives = selector1degree(objectives);
+    console.log(roles, industries, objectives);
+    const result = await fetch(`${url}/api/auth/createUser`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -235,15 +281,28 @@ const Messanger = ({ children }) => {
         roles,
         industries,
         objectives,
+        ...signupData,
+      }),
+    });
+    
+    return await result.json();
+  };
+
+  const signinAPI = async (email, password) => {
+    const result = await fetch(`${url}/api/auth/login`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
         email,
         password,
       }),
     });
-
-    console.log(result);
+    return await result.json();
   };
 
-  const fetchRecommendedJobs = async (recommendedJobsFilter) => {
+  const fetchRecommendedJobsAPI = async (recommendedJobsFilter) => {
     var result = await fetch(`${url}/api/jobs/recommendedjobs`, {
       method: "POST",
       headers: {
@@ -259,17 +318,23 @@ const Messanger = ({ children }) => {
   return (
     <apiContext.Provider
       value={{
-        recommendedJobsFilter,
-        setRecommendedJobsFilter,
+        signupData,
+        setSignupData,
+        goals,
+        setGoals,
         roles,
         setRoles,
         industries,
         setIndustries,
+        recommendedJobsFilter,
+        setRecommendedJobsFilter,
         skills,
         setSkills,
-        signup,
         jobs,
         setJobs,
+        signupAPI,
+        signinAPI,
+        fetchRecommendedJobsAPI,
       }}
     >
       {children}

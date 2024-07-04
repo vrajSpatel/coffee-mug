@@ -1,14 +1,8 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import apiContext from "../Context/apiContext";
 
 const Goals = () => {
-  const [goals, setGoals] = useState({
-    "Fundraising for my Startup": 0,
-    "Invest in Startups": 0,
-    "Find a Job": 0,
-    "Hire Talent": 0,
-    "Brainstorm Ideas": 0,
-    "I don't have a specific Goal": 0,
-  });
+  const { goals, setGoals } = useContext(apiContext);
   const [warning, setWarning] = useState(false);
   const goalSelector = (element) => {
     var count = 0;
