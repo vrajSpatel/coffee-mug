@@ -61,19 +61,19 @@ router.post("/postjob", fetchuser, async (req, res) => {
 router.post("/recommendedjobs", async (req, res) => {
   try {
     const { Roles, Industries, Seniority, minExp, MaxExp, Location } = req.body;
-
+    console.log(req.body);
     const finded = await Jobs.aggregate([
       {
-       $match :{
-        $or: [
-          { Role: { $in: Roles } },
-          { PreferredIndustries: { $in: Industries } },
-          { Seniority: { $in: Seniority } },
-          { city: Location },
-          { MinExp: { $lt: minExp } },
-          { MaxExp: { $gt: MaxExp } },
-        ]
-       }
+        $match: {
+          $or: [
+            { Role: { $in: Roles } },
+            { PreferredIndustries: { $in: Industries } },
+            { Seniority: { $in: Seniority } },
+            { city: Location },
+            { MinExp: { $lt: minExp } },
+            { MaxExp: { $gt: MaxExp } },
+          ],
+        },
       },
 
       {
@@ -83,8 +83,38 @@ router.post("/recommendedjobs", async (req, res) => {
           foreignField: "email",
           as: "profiledetails",
         },
-      }
+      },
+      {
+        $addFields: {
+          profiledetails: {
+            $arrayElemAt: ["$profiledetails", 0],
+          },
+        },
+      },
+      {
+        $project: {
+          email: 1,
+          Role: 1,
+          Seniority: 1,
+          Name: 1,
+          Stage: 1,
+          MinExp: 1,
+          MaxExp: 1,
+          PreferredSkills: 1,
+          PreferredIndustries: 1,
+          jobDescription: 1,
+          city: 1,
+          remoteLocation: 1,
+          opportunityVisibility: 1,
 
+          "profiledetails.firstName": 1,
+          "profiledetails.lastName": 1,
+          "profiledetails.email": 1,
+          "profiledetails.profileImage": 1,
+          "profiledetails.designation": 1,
+          "profiledetails.company": 1,
+        },
+      },
     ]);
     res.json(finded);
     // [{email},{email2},{}]

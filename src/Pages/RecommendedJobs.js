@@ -15,6 +15,7 @@ const RecommendedJobs = () => {
     industries,
     jobs,
     setJobs,
+    fetchRecommendedJobsAPI,
   } = useContext(apiContext);
   const [seniority] = useState({
     seniority: {
@@ -154,7 +155,13 @@ const RecommendedJobs = () => {
             />
           </div>
           <div className="applyFilterButton">
-            <button>Apply Filter</button>
+            <button
+              onClick={() => {
+                fetchRecommendedJobsAPI(recommendedJobsFilter);
+              }}
+            >
+              Apply Filter
+            </button>
           </div>
         </div>
         <div className="jobsPosts">
@@ -208,16 +215,24 @@ const RecommendedJobs = () => {
                   <div className="userDetails">
                     <div className="headerTitle">Job Posted:</div>
                     <div className="userContainer">
-                      <div className="profileImage">
-                        <img src={element.profileImage} alt="profileImage" />
-                      </div>
-                      <div className="userDetails">
-                        <div className="profileName">{element.profileName}</div>
-                        <div className="profileDesignation">
-                          {element.profileDesignation}
+                      <div className="sectionCover">
+                        <div className="profileImage">
+                          <img
+                            src={element.profiledetails.profileImage}
+                            alt="profileImage"
+                          />
                         </div>
-                        <div className="profileCompany">
-                          {element.profileCompany}
+                        <div className="userData">
+                          <div className="profileName">
+                            {element.profiledetails.firstName}{" "}
+                            {element.profiledetails.lastName}
+                          </div>
+                          <div className="profileDesignation">
+                            {element.profiledetails.designation}
+                          </div>
+                          <div className="profileCompany">
+                            {element.profiledetails.company}
+                          </div>
                         </div>
                       </div>
                       <div className="moreDetails">

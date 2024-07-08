@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import Navbar from "../Component/Navbar";
 import Footer from "../Component/Footer";
 import LocationSelect from "../Component/LocationSelect";
-import { Link, createSearchParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./css/Jobs.css";
 import apiContext from "../Context/apiContext";
 
@@ -68,7 +68,7 @@ const Jobs = () => {
       keyword: "Advertising / Marketing",
       img: marketingImg,
     },
-    { value: "Sales", keyword: "Sales/Revenue/BD", img: "salesImg" },
+    { value: "Sales", keyword: "Sales/Revenue/BD", img: salesImg },
     { value: "Technology", keyword: "Technology", img: technologyImg },
     { value: "HR", keyword: "HR", img: HRImg },
     { value: "Finance", keyword: "Finance", img: financeImg },
@@ -193,9 +193,10 @@ const Jobs = () => {
         </div>
         <div className="topRoles">
           <div className="firstRow">
-            {firstRowRoles.map((element) => {
+            {firstRowRoles.map((element, index) => {
               return (
                 <Link
+                  key={index}
                   to="/recommended-jobs"
                   onClick={() => {
                     changeJobRoleFilters(element.keyword);

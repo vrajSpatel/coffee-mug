@@ -11,16 +11,22 @@ import RecommendedJobs from "./Pages/RecommendedJobs.js";
 import Messanger from "./Context/Messanger.js";
 import PostaJob from "./Pages/PostaJob.js";
 import Account from "./Pages/Account.js";
+import { useRef } from "react";
 
 function App() {
+  const auth_token = useRef("");
+
   return (
     <>
-      <Messanger>
+      <Messanger auth_token={auth_token}>
         <BrowserRouter>
           <Routes>
             <Route path="/" Component={Home} />
             <Route path="/choose-goals" element={<ChooseGoals page={1} />} />
-            <Route path="/choose-industries" element={<ChooseGoals page={2} />}/>
+            <Route
+              path="/choose-industries"
+              element={<ChooseGoals page={2} />}
+            />
             <Route path="/choose-roles" element={<ChooseGoals page={3} />} />
             <Route path="/process-profile" element={<ChooseGoals page={4} />} />
             <Route path="/jobs" element={<Jobs />} />
@@ -31,12 +37,10 @@ function App() {
             <Route path="/signin_phone" Component={SigninwithPhone} />
             <Route path="/forgotpassword" Component={Forgotpass} />
             <Route path="/downloadapp" Component={DownloadApp} />
-            <Route path="/mentors" Component={Mentor}/>
-
+            <Route path="/mentors" Component={Mentor} />
           </Routes>
         </BrowserRouter>
       </Messanger>
-      
     </>
   );
 }
