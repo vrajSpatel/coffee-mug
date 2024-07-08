@@ -9,8 +9,8 @@ const SignIn = () => {
   const nevi = useNavigate();
   const { signinAPI } = useContext(apiContext);
   const [userdata, setuserdata] = useState({
-    email: "DP1@gmail.com",
-    password: "DP1",
+    email: "",
+    password: "",
   });
   const changeuserdata = (e) => {
     setuserdata((data) => {

@@ -6,25 +6,36 @@ import apiContext from "../Context/apiContext";
 import LocationSelect from "../Component/LocationSelect";
 
 const PostaJob = () => {
-  const { roles, skills, industries } = useContext(apiContext);
+  const { roles, skills, industries, postJobAPI } = useContext(apiContext);
   const [jobData, setJobData] = useState({
-    Role: "",
-    Seniority: "",
-    Name: "",
-    Stage: "",
-    MinExp: "",
-    MaxExp: "",
-    PreferredSkills: [],
-    PreferredIndustries: [],
-    jobDescription: "",
-    city: "",
+    Role: "Founder",
+    Seniority: "Mid-Senior Level",
+    Name: "dharmik patel",
+    Stage: "Early Stage Venture (Series-A Stage)",
+    MinExp: "2",
+    MaxExp: "7",
+    PreferredSkills: [
+      "Database Triggers",
+      "Salesforce.com Administration",
+      "Quotas",
+      "Architects",
+    ],
+    PreferredIndustries: [
+      "Investor/VC",
+      "Consumer Internet",
+      "Recruitment",
+      "B2B Tech",
+    ],
+    jobDescription: "nothing special",
+    city: "1",
     remoteLocation: false,
-    opportunityVisibility: "",
+    opportunityVisibility: true,
   });
 
   const changeStringData = (e) => {
+    console.log(jobData);
     setJobData((data) => {
-      return { ...data, [e.target.name]: [e.target.value] };
+      return { ...data, [e.target.name]: e.target.value };
     });
   };
   const skillsChanger = (element) => {
@@ -65,6 +76,21 @@ const PostaJob = () => {
         };
       });
     }
+  };
+  const postaJobOnclick = () => {
+    if (
+      jobData.Role === "" ||
+      jobData.Seniority === "" ||
+      jobData.Name === "" ||
+      jobData.Stage === "" ||
+      jobData.MinExp === "" ||
+      jobData.MaxExp === "" ||
+      jobData.PreferredSkills.length === 0 ||
+      jobData.PreferredIndustries === 0
+    ) {
+      return;
+    }
+    postJobAPI(jobData);
   };
   return (
     <>
@@ -305,14 +331,12 @@ const PostaJob = () => {
                 <input
                   type="checkbox"
                   name="visible"
-                  checked={
-                    jobData.opportunityVisibility === "visible" ? true : false
-                  }
+                  checked={jobData.opportunityVisibility}
                   onChange={() => {
                     setJobData((data) => {
                       return {
                         ...data,
-                        opportunityVisibility: "visible",
+                        opportunityVisibility: true,
                       };
                     });
                   }}
@@ -327,14 +351,12 @@ const PostaJob = () => {
                 <input
                   type="checkbox"
                   name="private"
-                  checked={
-                    jobData.opportunityVisibility === "private" ? true : false
-                  }
+                  checked={!jobData.opportunityVisibility}
                   onChange={() => {
                     setJobData((data) => {
                       return {
                         ...data,
-                        opportunityVisibility: "private",
+                        opportunityVisibility: false,
                       };
                     });
                   }}
@@ -347,7 +369,7 @@ const PostaJob = () => {
             </div>
           </div>
           <div className="submitButton">
-            <button>Submit Job Post</button>
+            <button onClick={postaJobOnclick}>Submit Job Post</button>
           </div>
         </div>
       </div>

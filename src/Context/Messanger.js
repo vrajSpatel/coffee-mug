@@ -1,21 +1,35 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import apiContext from "./apiContext";
 
-const Messanger = ({ children }) => {
+const Messanger = ({ children, auth_token }) => {
   const url = "http://localhost:5000";
-  const [authToken, setAuthToken] = useState("");
+
   const cookieSetter = (name, value) => {
     document.cookie = `${name}=${value};max-age=${3600 * 24 * 10}`;
   };
   const cookieFetcher = (name) => {
-    console.log(document.cookie);
+    var cookies = document.cookie.split(";");
+    var cookieValue = "";
+    cookies.map((element) => {
+      element = element.split("=");
+      if (element[0].slice(1) === name) {
+        cookieValue = element[1];
+      }
+      return true;
+    });
+    return cookieValue;
   };
+
+  useEffect(() => {
+    auth_token.current = cookieFetcher("auth_token");
+  }, []);
+
   const [signupData, setSignupData] = useState({
-    email: "DP1@gmail.com",
-    password: "DP1",
+    email: "",
+    password: "",
   });
   const [goals, setGoals] = useState({
-    "Fundraising for my Startup": 1,
+    "Fundraising for my Startup": 0,
     "Invest in Startups": 0,
     "Find a Job": 0,
     "Hire Talent": 0,
@@ -24,7 +38,7 @@ const Messanger = ({ children }) => {
   });
   const [roles, setRoles] = useState({
     Popular: {
-      Founder: 1,
+      Founder: 0,
       "Investor / VC  ": 0,
       "Angel Investor": 0,
       "COO, CBO, CEO": 0,
@@ -90,7 +104,6 @@ const Messanger = ({ children }) => {
       Audit: 0,
       Banking: 0,
       "Customer Service": 0,
-      "Customer Service": 0,
       "Financial markets": 0,
       legal: 0,
       "Merchandising / Buying / Planning": 0,
@@ -143,7 +156,7 @@ const Messanger = ({ children }) => {
   });
   const [industries, setIndustries] = useState({
     "Popular Industries": {
-      "Consumer Internet": 1,
+      "Consumer Internet": 0,
       "Investor/VC": 0,
       "Big data/AI/IOT/ Robotics": 0,
       Fintech: 0,
@@ -235,11 +248,15 @@ const Messanger = ({ children }) => {
       city: "vadodara",
       remoteLocation: true,
       FoundingYear: "1998",
-      profileImage:
-        "https://th.bing.com/th/id/OIP.PYipJ_hSncugM2SwnZitvgHaEK?w=284&h=180&c=7&r=0&o=5&dpr=1.4&pid=1.7",
-      profileName: "venna remen",
-      profileDesignation: "a",
-      profileCompany: "b",
+      profiledetails: {
+        profileImage:
+          "https://th.bing.com/th/id/OIP.PYipJ_hSncugM2SwnZitvgHaEK?w =284&h=180&c=7&r=0&o=5&dpr=1.4&pid=1.7",
+        email: "DP4@gmail.com",
+        company: "b",
+        designation: "aaaa  ",
+        firstName: "dharmik",
+        lastName: "patel",
+      },
     },
   ]);
   const selector1degree = (obj) => {
@@ -248,8 +265,9 @@ const Messanger = ({ children }) => {
       if (obj[element] === 1) {
         arr.push(element);
       } else {
-        return;
+        return true;
       }
+      return true;
     });
     return arr;
   };
@@ -260,9 +278,11 @@ const Messanger = ({ children }) => {
         if (obj[element][subElement] === 1) {
           arr.push(subElement);
         } else {
-          return;
+          return true;
         }
+        return true;
       });
+      return true;
     });
     return arr;
   };
@@ -270,9 +290,9 @@ const Messanger = ({ children }) => {
     console.log(objectives);
     roles = selector2degree(roles);
     industries = selector2degree(industries);
-    var objectives = selector1degree(objectives);
+    objectives = selector1degree(objectives);
     console.log(roles, industries, objectives);
-    const result = await fetch(`${url}/api/auth/createUser`, {
+    var result = await fetch(`${url}/api/auth/createUser`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -284,12 +304,14 @@ const Messanger = ({ children }) => {
         ...signupData,
       }),
     });
-    
-    return await result.json();
+    result = await result.json();
+    auth_token.current = result.auth_token;
+    cookieSetter("auth_token", result.auth_token);
+    return result;
   };
 
   const signinAPI = async (email, password) => {
-    const result = await fetch(`${url}/api/auth/login`, {
+    var result = await fetch(`${url}/api/auth/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -299,7 +321,37 @@ const Messanger = ({ children }) => {
         password,
       }),
     });
-    return await result.json();
+    result = await result.json();
+    auth_token.current = result.auth_token;
+    cookieSetter("auth_token", result.auth_token);
+    return result;
+  };
+
+  const postJobAPI = async (jobData) => {
+    var result = await fetch(`${url}/api/jobs/postjob`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        auth_token: auth_token.current,
+      },
+      body: JSON.stringify({
+        Role: jobData.Role,
+        Seniority: jobData.Seniority,
+        Name: jobData.Name,
+        Stage: jobData.Stage,
+        MinExp: Number(jobData.MinExp),
+        MaxExp: Number(jobData.MaxExp),
+        PreferredSkills: jobData.PreferredSkills,
+        PreferredIndustries: jobData.PreferredIndustries,
+        jobDescription: jobData.jobDescription,
+        city: jobData.city,
+        remoteLocation: jobData.remoteLocation,
+        opportunityVisibility: jobData.opportunityVisibility,
+      }),
+    });
+    result = await result.json();
+    console.log(result);
+    return result;
   };
 
   const fetchRecommendedJobsAPI = async (recommendedJobsFilter) => {
@@ -310,7 +362,7 @@ const Messanger = ({ children }) => {
       },
       body: JSON.stringify(recommendedJobsFilter),
     });
-    result = result.json();
+    result = await result.json();
     console.log(result);
     setJobs(result);
   };
@@ -318,6 +370,8 @@ const Messanger = ({ children }) => {
   return (
     <apiContext.Provider
       value={{
+        auth_token,
+        cookieFetcher,
         signupData,
         setSignupData,
         goals,
@@ -335,6 +389,7 @@ const Messanger = ({ children }) => {
         signupAPI,
         signinAPI,
         fetchRecommendedJobsAPI,
+        postJobAPI,
       }}
     >
       {children}

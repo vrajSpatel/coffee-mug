@@ -14,7 +14,7 @@
   height: 4px;
   width: 6%;
   background: #e77b31;
-  bottom: 0;
+  bottom: 1rem;
   border-radius: 4px;
 }
 
@@ -113,6 +113,13 @@
   background: white;
   color: #e77b31 !important;
 }
+.jobsPost {
+  background: white;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 1rem;
+  border: 1px solid rgba(128, 128, 128, 0.341);
+}
 
 .header {
   display: flex;
@@ -120,13 +127,64 @@
   align-items: center;
 }
 
-.firstSection{
-  display:flex;
-  font-size:1.5rem;
+.firstSection {
+  display: flex;
+  font-size: 1.5rem;
 }
-.highlightOrange{
-  color:#e77b31;
+.highlightOrange {
+  color: #e77b31;
 }
-.firstSection > div{
-  display:flex
+.highlightOrange > div {
+  margin: 0 5px 0 0;
+}
+.firstSection > div {
+  display: flex;
+}
+.industryName {
+  margin-left: 5px;
+}
+
+.midContainer {
+  display: flex;
+  gap: 3rem;
+  font-size: 0.95rem;
+  margin: 1rem 0;
+}
+.midContainer > .internalContainer {
+  max-width: 20%;
+}
+.midContainer > .internalContainer > .title {
+  font-weight: 700;
+}
+
+.sectionCover > .profileImage > img {
+  margin: 0;
+  height: 5.5rem !important;
+  width: 5.5rem !important;
+}
+.headerTitle {
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin: 0;
+}
+.userContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  padding: 0 1rem 0 0;
+  margin: 1rem 0 0 0;
+}
+.userContainer > .sectionCover {
+  display: flex;
+  gap: 1rem;
+}
+.userData > .profileName {
+  margin: 5px 0;
+  color: black !important;
+}
+.userData > div {
+  color: gray;
+}
+.moreDetails > a {
+  color: #e77b31;
 }
