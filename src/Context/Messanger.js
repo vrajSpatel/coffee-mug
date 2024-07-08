@@ -266,6 +266,7 @@ const Messanger = ({ children }) => {
     });
     return arr;
   };
+  
   const signupAPI = async (objectives, roles, industries, signupData) => {
     console.log(objectives);
     roles = selector2degree(roles);
