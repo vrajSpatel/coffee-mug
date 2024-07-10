@@ -12,6 +12,7 @@ import Messanger from "./Context/Messanger.js";
 import PostaJob from "./Pages/PostaJob.js";
 import Account from "./Pages/Account.js";
 import { useRef } from "react";
+import Feed from "./Pages/Feed.jsx";
 
 function App() {
   const auth_token = useRef("");
@@ -38,6 +39,7 @@ function App() {
             <Route path="/forgotpassword" Component={Forgotpass} />
             <Route path="/downloadapp" Component={DownloadApp} />
             <Route path="/mentors" Component={Mentor} />
+            <Route path="/feed" Component={Feed} />
           </Routes>
         </BrowserRouter>
       </Messanger>
