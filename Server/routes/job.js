@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const jwt = require("jsonwebtoken");
 const Jobs = require("../Models/Jobs");
+const User = require('../Models/User')
 
 //fetchuser
 const fetchuser = require("../Middleware/fetchuser");
@@ -136,5 +137,30 @@ router.post("/userjobpost", fetchuser, async (req, res) => {
     console.log(error);
   }
 });
+
+
+router.post("/fetchfeed", fetchuser, async (req, res) => {
+  try {
+    const email = req.user.email;
+
+    var result = await User.findOne({ email })
+
+    var result2 = await User.aggregate([
+      {
+        $match: {
+          $and: [
+            { objectives : { $in: result.objectives } },
+            { email : {$ne : email}}
+          ],
+        }
+      }
+    ]) 
+
+    res.send(result2)
+
+  } catch (error) {
+    res.send(error)
+  }
+})
 
 module.exports = router;

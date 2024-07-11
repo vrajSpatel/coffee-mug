@@ -1,10 +1,25 @@
-import React from 'react'
+import React, { useContext, useState,useEffect } from 'react'
 import './css/feed.css'
 import { Link } from 'react-router-dom'
 import Navbar from '../Component/Navbar'
 import Footer from '../Component/Footer'
+import apiContext from '../Context/apiContext'
 
 const Feed = () => {
+
+    const { fetchFeedApi ,cookieFetcher ,auth_token} = useContext(apiContext);
+
+    useEffect(() => {
+        auth_token.current = cookieFetcher("auth_token");
+      });
+
+    const [feedData, setfeedData] = useState(async() => {
+        console.log (await fetchFeedApi())
+        
+        return await fetchFeedApi()
+    });
+
+
     return (
         <>
             <Navbar />
@@ -46,90 +61,97 @@ const Feed = () => {
                     </div>
 
                     <div className="mid_feed">
-                        <div className="card_investor">
 
-                            <div className="container_card">
+                        {
+                            feedData?.map((element) => {
+                                return (
+                                    <div className="card_investor">
 
-                                <div className="header_name">
-                                    <h3>Would you like to meet
-                                        <span>
-                                            <Link>Vraj</Link>
-                                        </span>
-                                        ?
-                                    </h3>
+                                        <div className="container_card">
 
-                                </div>
+                                            <div className="header_name">
+                                                <h3>Would you like to meet
+                                                    <span>
+                                                        <Link>Vraj</Link>
+                                                    </span>
+                                                    ?
+                                                </h3>
 
-                                <div className="info_person">
-                                    <div className="cont_person">
-
-                                        <div className="head_cont_p">
-
-                                            <div className="na_image">
-
-                                                <div className="image_na">
-                                                    <a href="https://coffeemug.ai/contact/sweta-khandelwal-2969a113"><img src="https://assets.coffeemug.ai/li-files/image-64b281c1-eac8-4fb7-baf4-8ba937398c85.jpg" alt="" /></a>
-                                                </div>
-
-                                                <div className="na_na">
-                                                    <Link>Vraj</Link>
-                                                    <Link>Founder</Link>
-                                                </div>
                                             </div>
 
-                                            <div className="mt_cont">
-                                                <div className="mt_item">
-                                                    <img src="https://assets.coffeemug.ai/assets/v2/img/svg/meetings.svg" alt="" />
-                                                    <p>1 Meetings</p>
-                                                </div>
-                                                <div className="mt_item">
-                                                    <img src="https://assets.coffeemug.ai/assets/v2/img/svg/handshape.svg" alt="" />
-                                                    <p>10+ Want to meet</p>
-                                                </div>
-                                                <div className="mt_item">
-                                                    <img src="https://assets.coffeemug.ai/assets/v2/img/svg/tumbsup.svg" alt="" />
-                                                    <p> Endorsements</p>
-                                                </div>
-                                            </div>
+                                            <div className="info_person">
+                                                <div className="cont_person">
 
-                                        </div>
+                                                    <div className="head_cont_p">
 
-                                        <div className="bio_post">
-                                            <p>Eklavya is establishing a company or organization. Founders are often responsible for developing the initial vision, mission, and strategy of the company, as well as raising funds, building a team, and bringing the product or service to market. He is entrepreneurs who start their own... <Link>more</Link></p>
+                                                        <div className="na_image">
 
-                                        </div>
+                                                            <div className="image_na">
+                                                                <a href="https://coffeemug.ai/contact/sweta-khandelwal-2969a113"><img src="https://assets.coffeemug.ai/li-files/image-64b281c1-eac8-4fb7-baf4-8ba937398c85.jpg" alt="" /></a>
+                                                            </div>
 
-                                        <div className="gole_container">
-                                            <p><img src="https://assets.coffeemug.ai/assets/v2/img/svg/goal.svg" alt="" />Goals</p>
-                                            <div className="gole_list ">
-                                                <ul>
-                                                    <li>
-                                                        <div className="check_text">
-                                                            <i className="fa-solid fa-check" aria-hidden="true"></i>
-                                                            <p>Hire Talent</p>
+                                                            <div className="na_na">
+                                                                <Link>Vraj</Link>
+                                                                <Link>Founder</Link>
+                                                            </div>
                                                         </div>
-                                                    </li>
 
-                                                    <li>
-                                                        <div className="check_text">
-                                                            <i className="fa-solid fa-check" aria-hidden="true"></i>
-                                                            <p>Brainstorm Ideas</p>
+                                                        <div className="mt_cont">
+                                                            <div className="mt_item">
+                                                                <img src="https://assets.coffeemug.ai/assets/v2/img/svg/meetings.svg" alt="" />
+                                                                <p>1 Meetings</p>
+                                                            </div>
+                                                            <div className="mt_item">
+                                                                <img src="https://assets.coffeemug.ai/assets/v2/img/svg/handshape.svg" alt="" />
+                                                                <p>10+ Want to meet</p>
+                                                            </div>
+                                                            <div className="mt_item">
+                                                                <img src="https://assets.coffeemug.ai/assets/v2/img/svg/tumbsup.svg" alt="" />
+                                                                <p> Endorsements</p>
+                                                            </div>
                                                         </div>
-                                                    </li>
-                                                </ul>
+
+                                                    </div>
+
+                                                    <div className="bio_post">
+                                                        <p>Eklavya is establishing a company or organization. Founders are often responsible for developing the initial vision, mission, and strategy of the company, as well as raising funds, building a team, and bringing the product or service to market. He is entrepreneurs who start their own... <Link>more</Link></p>
+
+                                                    </div>
+
+                                                    <div className="gole_container">
+                                                        <p><img src="https://assets.coffeemug.ai/assets/v2/img/svg/goal.svg" alt="" />Goals</p>
+                                                        <div className="gole_list ">
+                                                            <ul>
+                                                                <li>
+                                                                    <div className="check_text">
+                                                                        <i className="fa-solid fa-check" aria-hidden="true"></i>
+                                                                        <p>Hire Talent</p>
+                                                                    </div>
+                                                                </li>
+
+                                                                <li>
+                                                                    <div className="check_text">
+                                                                        <i className="fa-solid fa-check" aria-hidden="true"></i>
+                                                                        <p>Brainstorm Ideas</p>
+                                                                    </div>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
                                             </div>
+
+                                            <div className="int_button">
+                                                <Link>Express Interest</Link>
+                                            </div>
+
                                         </div>
 
                                     </div>
-                                </div>
-
-                                <div className="int_button">
-                                    <Link>Express Interest</Link>
-                                </div>
-
-                            </div>
-
-                        </div>
+                                )
+                            })
+                        }
 
                     </div>
 

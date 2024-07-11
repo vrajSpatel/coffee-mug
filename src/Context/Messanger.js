@@ -22,7 +22,7 @@ const Messanger = ({ children, auth_token }) => {
 
   useEffect(() => {
     auth_token.current = cookieFetcher("auth_token");
-  }, []);
+  });
 
   const [signupData, setSignupData] = useState({
     email: "",
@@ -286,7 +286,7 @@ const Messanger = ({ children, auth_token }) => {
     });
     return arr;
   };
-  
+
   const signupAPI = async (objectives, roles, industries, signupData) => {
     console.log(objectives);
     roles = selector2degree(roles);
@@ -385,6 +385,18 @@ const Messanger = ({ children, auth_token }) => {
       body: data,
     });
   };
+
+  const fetchFeedApi = async () => {
+    var result = await fetch(`${url}/api/jobs/fetchfeed`, {
+      method: "POST",
+      headers: {
+        auth_token: auth_token.current,
+      }
+    });
+    console.log(auth_token.current)
+    return await result.json()
+  }
+
   return (
     <apiContext.Provider
       value={{
@@ -409,6 +421,7 @@ const Messanger = ({ children, auth_token }) => {
         fetchRecommendedJobsAPI,
         postJobAPI,
         updateUserDetailsAPI,
+        fetchFeedApi,
       }}
     >
       {children}
