@@ -387,13 +387,16 @@ const Messanger = ({ children, auth_token }) => {
   };
 
   const fetchFeedApi = async () => {
-    var result = await fetch(`${url}/api/jobs/fetchfeed`, {
-      method: "POST",
-      headers: {
-        auth_token: auth_token.current,
-      },
-    });
-    return await result.json();
+    if (auth_token.current !== "") {
+      var result = await fetch(`${url}/api/jobs/fetchfeed`, {
+        method: "POST",
+        headers: {
+          auth_token: auth_token.current,
+        },
+      });
+      return await result.json();
+    } else {
+      return [];    }
   };
 
   return (

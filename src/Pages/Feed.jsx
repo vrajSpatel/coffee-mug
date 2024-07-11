@@ -11,9 +11,9 @@ const Feed = () => {
   const [feedData, setfeedData] = useState();
   useEffect(() => {
     const func1 = async function () {
-      if (auth_token.current !== "") {
-        setfeedData(await fetchFeedApi());
-      }
+      setfeedData(await fetchFeedApi());
+
+      console.log(await fetchFeedApi());
     };
     func1();
   }, [auth_token]);
