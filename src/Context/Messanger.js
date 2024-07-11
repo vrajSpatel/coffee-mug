@@ -37,28 +37,28 @@ const Messanger = ({ children, auth_token }) => {
     "I don't have a specific Goal": 0,
   });
   const [roles, setRoles] = useState({
-    Popular: {
-      Founder: 0,
-      "Investor / VC  ": 0,
-      "Angel Investor": 0,
-      "COO, CBO, CEO": 0,
-      Technology: 0,
-      "Growth / Digital Marketing": 0,
-      Mentor: 0,
-      Recruitment: 0,
-      "big data / AI / ML": 0,
-      "Sales / Revenue / BD": 0,
-      Strategy: 0,
-      HR: 0,
-      "Advertising / Marketing": 0,
-      "Supply chain": 0,
-      Finance: 0,
-      "Business operations": 0,
-      "Investment Banker": 0,
-      "Merchant banker": 0,
-      "Leadership / Executive Coach": 0,
-      "Mergers & Acquisition": 0,
-    },
+    // Popular: {
+    //   Founder: 0,
+    //   "Investor / VC  ": 0,
+    //   "Angel Investor": 0,
+    //   "COO, CBO, CEO": 0,
+    //   Technology: 0,
+    //   "Growth / Digital Marketing": 0,
+    //   Mentor: 0,
+    //   Recruitment: 0,
+    //   "big data / AI / ML": 0,
+    //   "Sales / Revenue / BD": 0,
+    //   Strategy: 0,
+    //   HR: 0,
+    //   "Advertising / Marketing": 0,
+    //   "Supply chain": 0,
+    //   Finance: 0,
+    //   "Business operations": 0,
+    //   "Investment Banker": 0,
+    //   "Merchant banker": 0,
+    //   "Leadership / Executive Coach": 0,
+    //   "Mergers & Acquisition": 0,
+    // },
     "Business Functions": {
       "Advertising / Marketing": 0,
       "big data / AI / ML": 0,
@@ -368,6 +368,23 @@ const Messanger = ({ children, auth_token }) => {
     setJobs(result);
   };
 
+  const updateUserDetailsAPI = async (userData) => {
+    const data = new FormData();
+    Object.keys(userData).forEach((element) => {
+      if (typeof userData[element] === "object") {
+        console.log("object");
+        userData[element] = JSON.stringify(userData[element]);
+      }
+      data.append(element, userData[element]);
+    });
+    var result = await fetch(`${url}/api/auth/updateUserDetails`, {
+      method: "POST",
+      headers: {
+        auth_token: auth_token.current,
+      },
+      body: data,
+    });
+  };
   return (
     <apiContext.Provider
       value={{
@@ -391,6 +408,7 @@ const Messanger = ({ children, auth_token }) => {
         signinAPI,
         fetchRecommendedJobsAPI,
         postJobAPI,
+        updateUserDetailsAPI,
       }}
     >
       {children}

@@ -30,8 +30,7 @@ const RecommendedJobs = () => {
   return (
     <>
       <Navbar />
-      <div className="mainTitle">Recommended Jobs</div>
-
+      <div className="mainTitle recomTitle">Recommended Jobs</div>
       <div className="mainjobsWindow">
         <div className="jobsFilters">
           <div className="filterSectionHeader">
