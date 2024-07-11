@@ -391,11 +391,10 @@ const Messanger = ({ children, auth_token }) => {
       method: "POST",
       headers: {
         auth_token: auth_token.current,
-      }
+      },
     });
-    console.log(auth_token.current)
-    return await result.json()
-  }
+    return await result.json();
+  };
 
   return (
     <apiContext.Provider
