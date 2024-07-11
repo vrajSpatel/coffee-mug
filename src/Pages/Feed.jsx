@@ -105,6 +105,7 @@ const Feed = () => {
 
           <div className="mid_feed">
             {feedData?.map((element) => {
+              console.log(element)
               return (
                 <div className="card_investor">
                   <div className="container_card">
@@ -112,7 +113,7 @@ const Feed = () => {
                       <h3>
                         Would you like to meet
                         <span>
-                          <Link>Vraj</Link>
+                          <Link>{element?.firstName}</Link>
                         </span>
                         ?
                       </h3>
@@ -123,16 +124,16 @@ const Feed = () => {
                         <div className="head_cont_p">
                           <div className="na_image">
                             <div className="image_na">
-                              <a href="https://coffeemug.ai/contact/sweta-khandelwal-2969a113">
+                              <Link>
                                 <img
-                                  src="https://assets.coffeemug.ai/li-files/image-64b281c1-eac8-4fb7-baf4-8ba937398c85.jpg"
+                                  src={element?.profileImage}
                                   alt=""
                                 />
-                              </a>
+                              </Link>
                             </div>
 
                             <div className="na_na">
-                              <Link>Vraj</Link>
+                              <Link>{ element.firstName  } {element.lastName}</Link>
                               <Link>Founder</Link>
                             </div>
                           </div>
@@ -164,13 +165,7 @@ const Feed = () => {
 
                         <div className="bio_post">
                           <p>
-                            Eklavya is establishing a company or organization.
-                            Founders are often responsible for developing the
-                            initial vision, mission, and strategy of the
-                            company, as well as raising funds, building a team,
-                            and bringing the product or service to market. He is
-                            entrepreneurs who start their own...{" "}
-                            <Link>more</Link>
+                            {element?.description}
                           </p>
                         </div>
 
@@ -184,25 +179,21 @@ const Feed = () => {
                           </p>
                           <div className="gole_list ">
                             <ul>
-                              <li>
-                                <div className="check_text">
-                                  <i
-                                    className="fa-solid fa-check"
-                                    aria-hidden="true"
-                                  ></i>
-                                  <p>Hire Talent</p>
-                                </div>
-                              </li>
+                              {element.objectives.map((obj) => {
+                                return (
+                                  <li>
+                                    <div className="check_text">
+                                      <i
+                                        className="fa-solid fa-check"
+                                        aria-hidden="true"
+                                      ></i>
+                                      <p>{obj}</p>
+                                    </div>
+                                  </li>
+                                )
+                              }
+                              )}
 
-                              <li>
-                                <div className="check_text">
-                                  <i
-                                    className="fa-solid fa-check"
-                                    aria-hidden="true"
-                                  ></i>
-                                  <p>Brainstorm Ideas</p>
-                                </div>
-                              </li>
                             </ul>
                           </div>
                         </div>
