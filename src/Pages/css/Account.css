@@ -1,3 +1,100 @@
+.positionCover {
+  place-items: center;
+  position: fixed;
+  z-index: 100;
+  height: 100%;
+  width: 100%;
+}
+.updaterTitle {
+  margin: 0 0 1.5rem 0;
+}
+.updateCover {
+  background: #f9e0d0;
+  height: calc(100% * var(--opacity));
+  width: calc(100% * var(--opacity));
+  opacity: var(--opacity);
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s linear;
+}
+.overflowContainer {
+  height: calc(100vh - 4rem);
+  overflow-y: scroll;
+}
+.updateCover > .updateContainer {
+  background: white;
+  padding: 1.5rem;
+  display: flex;
+  place-items: center;
+  flex-direction: column;
+  position: relative;
+  opacity: var(--opacity);
+  transition: all 0.2s linear;
+  max-width: 50%;
+  margin: 2rem 0;
+}
+
+.updateCover > .updateContainer > .overflowContainer {
+  background: white;
+  padding: 0.5rem;
+  display: flex;
+  place-items: center;
+  flex-direction: column;
+  position: relative;
+  opacity: var(--opacity);
+  transition: all 0.2s linear;
+  /* max-width: 40%; */
+}
+.updateCover > .updateContainer > .overflowContainer > h4 {
+  width: 100%;
+  color: #e77b33;
+  margin: 0.5rem 0;
+}
+.updateCover > .updateContainer > .overflowContainer > .selectionBox {
+  margin: 0 0 2rem 0;
+}
+.closeButton {
+  color: white;
+  cursor: pointer;
+  position: absolute;
+  height: 1.7rem;
+  width: 1.7rem;
+  display: grid;
+  place-items: center;
+  top: 0;
+  right: 0;
+  font-size: 1.2rem;
+  margin: 1rem;
+  background: gray;
+  border-radius: 50%;
+  z-index: 100;
+}
+.updateCover > .updateContainer > .inputContainer {
+  display: flex;
+  justify-content: start;
+  flex-direction: column;
+  margin: 1rem;
+}
+.updateCover > .updateContainer > .submitButton,
+.updateCover > .updateContainer > .overflowContainer > .submitButton {
+  background: #5a9191;
+  color: white !important;
+  padding: 0.3rem 0.7rem;
+  font-size: 1.1rem !important;
+  border: 0 !important;
+  border-radius: 5px;
+  margin: 1.5rem 0 0 0;
+}
+.updateCover > .updateContainer > .inputContainer > input {
+  width: 20rem;
+  height: 2.7rem !important;
+  padding: 0 0.3rem;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  border: 1px solid rgba(128, 128, 128, 0.512);
+}
 .profileMainCover {
   display: grid;
   width: 100%;
@@ -30,11 +127,36 @@
   padding: 1rem;
   border-radius: 10px;
 }
-
-.profileImage > img {
+.first > .internalDiv > .profileImage {
+  --visibility: 0;
+  --opacity: 0;
   height: 100px;
   width: 100px;
+  position: relative;
   margin: calc(-50px - 1rem) 0 0 0;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.profileImage:hover {
+  --visibility: 100px !important;
+  --opacity: 1 !important;
+}
+.profileImage > i {
+  height: var(--visibility);
+  width: var(--visibility);
+  position: absolute;
+  background: rgba(255, 255, 255, 0.251);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  opacity: var(--opacity);
+  transition: all 0.2s linear;
+}
+.profileImage > img {
+  height: 100%;
+  width: 100%;
   object-fit: cover;
   border-radius: 50%;
 }
@@ -176,7 +298,7 @@
   border: 1px solid rgba(128, 128, 128, 0.547) !important;
   border-radius: 5px;
   padding: 0 5px;
-  width: 10rem;
+  min-width: 10rem;
 }
 .inputSection > .input > select {
   height: 1.7rem !important;
@@ -218,7 +340,7 @@
   font-size: 0.8rem !important;
 }
 
-.deleteAccount{
-  color:red;
-  text-decoration:underline;
+.deleteAccount {
+  color: red;
+  text-decoration: underline;
 }

@@ -3,18 +3,38 @@ const router = express.Router();
 const User = require("../Models/User");
 const Authenticate = require("../Models/authentication");
 const jwt = require("jsonwebtoken");
-
-//fetchuser
 const fetchuser = require("../Middleware/fetchuser");
+var bcrypt = require("bcryptjs");
+const multer = require("multer");
+const path = require("path");
 
-//signature for json web token
 const jwt_secret = "hellooo@";
 
-// express validator
 const { body, validationResult } = require("express-validator");
 
-//bcrypt
-var bcrypt = require("bcryptjs");
+//multer setup
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, "./Server/profileImages");
+  },
+  filename: function (req, file, cb) {
+    const randomNumber = Math.floor(Math.random() * 999999) + 1;
+    const originalname = file.originalname;
+    const extension = originalname.split(".").pop();
+    const newFilename = `${randomNumber}_${originalname}`;
+    cb(null, newFilename);
+  },
+});
+const upload = multer({
+  storage: storage,
+  fileFilter: function (req, file, callback) {
+    const ext = path.extname(file.originalname).toLowerCase();
+    if (ext !== ".png" && ext !== ".jpg" && ext !== ".jpeg") {
+      return callback(new Error("Only images are allowed"));
+    }
+    callback(null, true);
+  },
+}).single("profileImage");
 
 // route 1 : CREATE  a user using : POST "api/auth/createuser"  (no login required)
 router.post("/createUser", async (req, res) => {
@@ -140,6 +160,54 @@ router.post("/setupProfile", fetchuser, async (req, res) => {
     console.log(error.errmsg);
     res.status(500).send("some error occured from setupProfile");
   }
+});
+router.post("/updateUserDetails", fetchuser, async (req, res) => {
+  upload(req, res, async (err) => {
+    if (err) {
+      console.log(err);
+      return;
+    } else {
+      try {
+        const profileImage = req.file?.filename;
+        const Useremail = req.user.email;
+        var {
+          description,
+          roles,
+          industries,
+          objectives,
+          designation,
+          company,
+          city,
+          email,
+          mobile,
+        } = req.body;
+        roles = roles ? JSON.parse(roles) : null;
+        industries = industries ? JSON.parse(industries) : null;
+        objectives = objectives ? JSON.parse(objectives) : null;
+
+        const result = await User.updateOne(
+          { email: Useremail },
+          {
+            profileImage: profileImage ? profileImage : undefined,
+            description: description ? description : undefined,
+            roles: roles ? roles : undefined,
+            industries: industries ? industries : undefined,
+            objectives: objectives ? objectives : undefined,
+            designation: designation ? designation : undefined,
+            company: company ? company : undefined,
+            city: city ? city : undefined,
+            email: email ? email : undefined,
+            mobile: mobile ? mobile : undefined,
+          }
+        );
+        res.json(result);
+        return;
+      } catch (error) {
+        console.error(error);
+        res.status(500).send("some error occured from getuser");
+      }
+    }
+  });
 });
 
 module.exports = router;
