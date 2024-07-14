@@ -133,7 +133,7 @@ const Feed = () => {
                             </div>
 
                             <div className="na_na">
-                              <Link>{ element.firstName  } {element.lastName}</Link>
+                              <Link>{element.firstName} {element.lastName}</Link>
                               <Link>Founder</Link>
                             </div>
                           </div>
