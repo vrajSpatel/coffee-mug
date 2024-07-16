@@ -13,6 +13,7 @@ import PostaJob from "./Pages/PostaJob.js";
 import Account from "./Pages/Account.js";
 import { useRef } from "react";
 import Feed from "./Pages/Feed.jsx";
+import StartUp from "./Pages/StartUp.jsx";
 
 function App() {
   const auth_token = useRef("");
@@ -40,6 +41,7 @@ function App() {
             <Route path="/downloadapp" Component={DownloadApp} />
             <Route path="/mentors" Component={Mentor} />
             <Route path="/feed" Component={Feed} />
+            <Route path="/startups" Component={StartUp} />
           </Routes>
         </BrowserRouter>
       </Messanger>

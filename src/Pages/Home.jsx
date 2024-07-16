@@ -27,7 +27,7 @@ const Home = () => {
   const navigation = useNavigate();
   useEffect(() => {
     if (auth_token !== "") {
-      navigation("/jobs");
+      navigation("/feed");
     }
   });
   return (

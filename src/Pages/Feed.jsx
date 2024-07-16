@@ -20,7 +20,7 @@ const Feed = () => {
 
   return (
     <>
-      <Navbar />
+      <Navbar className='navbar_feed' / >
       <div className="container_feed">
         <div className="allsection">
           <div className="nav_menu">
