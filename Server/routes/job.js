@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const jwt = require("jsonwebtoken");
 const Jobs = require("../Models/Jobs");
-const User = require('../Models/User')
+const User = require("../Models/User");
 
 //fetchuser
 const fetchuser = require("../Middleware/fetchuser");
@@ -138,29 +138,60 @@ router.post("/userjobpost", fetchuser, async (req, res) => {
   }
 });
 
-
 router.post("/fetchfeed", fetchuser, async (req, res) => {
   try {
     const email = req.user.email;
 
-    var result = await User.findOne({ email })
+    var result = await User.findOne({ email });
 
     var result2 = await User.aggregate([
       {
         $match: {
           $and: [
-            { objectives : { $in: result.objectives } },
-            { email : {$ne : email}}
+            { objectives: { $in: result.objectives } },
+            { email: { $ne: email } },
           ],
-        }
-      }
-    ]) 
+        },
+      },
+    ]);
 
-    res.send(result2)
-
+    res.send(result2);
   } catch (error) {
-    res.send(error)
+    res.send(error);
   }
-})
+});
+router.post("/investorlist", async (req, res) => {
+  try {
+    const { Roles, Industries, Seniority, Location } = req.body;
+    console.log(req.body);
+    var finded;
+    if (
+      Roles.length === 0 &&
+      Industries.length === 0 &&
+      Seniority.length === 0 &&
+      Location === ""
+    ) {
+      finded = await User.find();
+    } else {
+      finded = await User.aggregate([
+        {
+          $match: {
+            $or: [
+              { roles: { $in: Roles } },
+              { industries: { $in: Industries } },
+              { seniority: Seniority },
+              { city: Location },
+            ],
+          },
+        },
+      ]);
+    }
+    console.log(finded);
+    res.json(finded);
+  } catch (error) {
+    res.status(400).json(error);
+    console.log(error);
+  }
+});
 
 module.exports = router;

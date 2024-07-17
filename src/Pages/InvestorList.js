@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Navbar from "../Component/Navbar";
 import LocationSelect from "../Component/LocationSelect";
 import SelectContainer from "../Component/SelectContainer";
@@ -7,8 +7,13 @@ import "./css/InvestorList.css";
 import { Link } from "react-router-dom";
 
 const InvestorList = () => {
-  const { roles, industries } = useContext(apiContext);
-  console.log(roles);
+  const { roles, industries, fetchInvestorListApi } = useContext(apiContext);
+  useEffect(() => {
+    const func = async () => {
+      setInvestorList(await fetchInvestorListApi(investorFilters));
+    };
+    func();
+  }, []);
   const [seniority] = useState({
     seniority: {
       "CXO/C-Suite": 0,
@@ -27,25 +32,8 @@ const InvestorList = () => {
     // minExp: "",
     // MaxExp: "",
   });
-  
-  const [investorList, setInvestorList] = useState([
-    {
-      city: "vadodara",
-      company: "b",
-      description: "no peeking",
-      designation: "a",
-      email: "DP5@gmail.com",
-      firstName: "dharmik",
-      industries: ["hello world"],
-      lastName: "patel",
-      mobile: "9723361612",
-      objectives: ["Fundraising for my Startup"],
-      profileImage: "138040_Screenshot (7).png",
-      roles: ["Founder"],
-      __v: 0,
-      _id: "668f7ab8824f8052bfa01fdb",
-    },
-  ]);
+
+  const [investorList, setInvestorList] = useState([]);
   return (
     <>
       <Navbar />
@@ -183,7 +171,7 @@ const InvestorList = () => {
           </div>
         </div>
         <div className="mid_feed">
-          {investorList.map((element) => {
+          {investorList?.map((element) => {
             return (
               <div className="card_investor">
                 <div className="container_card">

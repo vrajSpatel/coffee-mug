@@ -44,6 +44,9 @@ const UserSchema = new mongoose.Schema({
   city: {
     type: String,
   },
+  seniority: {
+    type: String,
+  },
   date: {
     type: Date,
     default: Date.now,

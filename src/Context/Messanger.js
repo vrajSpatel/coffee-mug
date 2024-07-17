@@ -399,6 +399,29 @@ const Messanger = ({ children, auth_token }) => {
       return [];
     }
   };
+  const fetchInvestorListApi = async (investorFilter) => {
+    if (auth_token.current !== "") {
+      var result = await fetch(`${url}/api/jobs/investorlist`, {
+        method: "POST",
+        headers: {
+          auth_token: auth_token.current,
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify(investorFilter),
+      });
+      result = await result.json();
+      console.log(result);
+      return result;
+    } else {
+      return [];
+    }
+  };
+  // fetchInvestorListApi({
+  //   Roles: ["Founder"],
+  //   Industries: [],
+  //   Seniority: [],
+  //   Location: "",
+  // });
 
   return (
     <apiContext.Provider
@@ -425,6 +448,7 @@ const Messanger = ({ children, auth_token }) => {
         postJobAPI,
         updateUserDetailsAPI,
         fetchFeedApi,
+        fetchInvestorListApi,
       }}
     >
       {children}

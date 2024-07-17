@@ -32,6 +32,13 @@ const Account = () => {
   const [profileData, setProfileData] = useState({ profileImage: undefined });
   const [profileUrl, setProfileUrl] = useState();
   const imageInputRef = useRef();
+  useEffect(() => {
+    setUpdatedData({
+      PreferredIndustries: firstSection.industries,
+      PreferredSkills: firstSection?.roles,
+      
+    });
+  }, []);
   const [updatedData, setUpdatedData] = useState({});
   useEffect(() => {
     if (profileData.profileImage) {
@@ -40,7 +47,7 @@ const Account = () => {
   }, [profileData.profileImage]);
 
   const industryChanger = (element) => {
-    if (updatedData.PreferredIndustries.includes(element)) {
+    if (updatedData?.PreferredIndustries?.includes(element)) {
       setUpdatedData((data) => {
         return {
           ...data,
@@ -53,7 +60,7 @@ const Account = () => {
       setUpdatedData((data) => {
         return {
           ...data,
-          industries: [...data.PreferredIndustries, element],
+          industries: [...data?.PreferredIndustries, element],
         };
       });
     }
@@ -167,7 +174,7 @@ const Account = () => {
                       {Object.keys(industries).map((element) => {
                         return Object.keys(industries[element]).map(
                           (subElement) => {
-                            return updatedData.PreferredIndustries.includes(
+                            return updatedData.PreferredIndustries?.includes(
                               subElement
                             ) ? (
                               <div
@@ -200,7 +207,7 @@ const Account = () => {
                     <div className="selectionBox">
                       {Object.keys(roles).map((element) => {
                         return Object.keys(roles[element]).map((subElement) => {
-                          return updatedData.PreferredSkills.includes(
+                          return updatedData?.PreferredSkills?.includes(
                             subElement
                           ) ? (
                             <div
@@ -494,6 +501,9 @@ const Account = () => {
               </div>
             </div>
             <Link className="deleteAccount">delete Account</Link>
+            <Link className="deleteAccount" style={{ marginLeft: "10px" }}>
+              Log Out
+            </Link>
           </div>
         </div>
       </div>
