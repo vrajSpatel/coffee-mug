@@ -29,14 +29,16 @@ const Navbar = ({ onlyLogo }) => {
               id="navbarNav"
             >
               <ul className="navbar-nav">
-                
                 <li className="nav-item">
                   <Link className="nav-link active link-warning" to="/jobs">
                     Jobs
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link active link-warning" to="/feed">
+                  <Link
+                    className="nav-link active link-warning"
+                    to="/startup-investors"
+                  >
                     Investor List
                   </Link>
                 </li>
@@ -51,17 +53,26 @@ const Navbar = ({ onlyLogo }) => {
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link target='_blank' className="nav-link active link-warning" to="https://coffeemug.ai/blog/">
+                  <Link
+                    target="_blank"
+                    className="nav-link active link-warning"
+                    to="https://coffeemug.ai/blog/"
+                  >
                     Blog
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link active link-warning" to="/downloadapp">
+                  <Link
+                    className="nav-link active link-warning"
+                    to="/downloadapp"
+                  >
                     Download App
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="btn btn-outline-orange" to='/signin'>Login</Link>
+                  <Link className="btn btn-outline-orange" to="/signin">
+                    Login
+                  </Link>
                 </li>
               </ul>
             </div>

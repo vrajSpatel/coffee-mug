@@ -12,7 +12,7 @@ const Messanger = ({ children, auth_token }) => {
     var cookieValue = "";
     cookies.map((element) => {
       element = element.split("=");
-      if (element[0].slice(1)  === name || element[0]===name)  {
+      if (element[0].slice(1) === name || element[0] === name) {
         cookieValue = element[1];
       }
       return true;
@@ -396,7 +396,8 @@ const Messanger = ({ children, auth_token }) => {
       });
       return await result.json();
     } else {
-      return [];    }
+      return [];
+    }
   };
 
   return (
