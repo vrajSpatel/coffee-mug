@@ -1,0 +1,172 @@
+a:hover {
+    color: black;
+}
+
+.container_startup .startup_posts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.container_startup .post_item_startup {
+    border: 1px solid #e5e5e5 !important;
+    background-color: #fff;
+    border: 1px solid #fcfcfc;
+    border-radius: 0.1875rem;
+    overflow: hidden;
+    margin-bottom: 20px;
+    transition: all 0.5s;
+    margin: 2rem;
+    width: 68%;
+}
+
+.container_startup .post_item_startup .header_card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    border-bottom: 1px solid #ededed;
+    padding: 17px 21px;
+}
+
+.container_startup .post_item_startup .header_card .company_name {
+    display: flex;
+}
+
+.container_startup .commp_logo {
+    height: 70px;
+}
+
+.container_startup .commp_logo img {
+    min-height: 50px;
+    min-width: 50px;
+    width: 50px;
+    height: 50px;
+    margin-top: 10px;
+}
+
+.container_startup .conpany_st-name {
+    margin: 0 10px;
+}
+
+.container_startup .conpany_st-name h2 {
+    color: #e77b33;
+    font-weight: 700;
+    margin: 0;
+}
+
+.container_startup .conpany_st-name p {
+    margin: 0;
+}
+
+.container_startup .company_info {
+    display: flex;
+    gap: 20px;
+}
+
+.container_startup .company_info .founding-year,
+.container_startup .company_info .num-empl {
+    font-size: 1rem;
+    line-height: 22px;
+}
+
+.container_startup .company_info img {
+    display: inline-block;
+    margin: 0;
+    vertical-align: bottom;
+    height: 25px !important;
+}
+
+.container_startup .company_info span {
+    white-space: nowrap;
+    font-size: 0.8em;
+    color: #8e8e8e;
+}
+
+.container_startup .company_info .linkdin-link h2 {
+    color: rgb(56, 56, 222);
+}
+
+.company_bio {
+    padding: 20px;
+}
+
+.company_bio p {
+    font-size: 0.9rem;
+}
+
+.company_bio h6{
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.container_startup .post_item_startup .founder_info{
+    display: flex;
+    justify-content: space-between;
+}
+
+.container_startup .post_item_startup .main_info{
+    display: flex;
+}
+
+.container_startup .main_info .founder_imag img{
+    min-height: 50px;
+    min-width: 50px;
+    width: 50px;
+    height: 50px;
+    vertical-align: middle;
+    border-radius: 100px;
+}
+
+.container_startup .main_info .founder_imag{
+    max-height: 70px;
+    padding-top: 10px;
+    margin-right: 1rem;
+}
+
+.container_startup .main_info .founder_bio .name-founder{
+    color: #4a4a4a;
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+.container_startup .main_info .founder_bio .founderat{
+    margin: 0;
+}
+
+.container_startup .main_info .founder_bio .founder_tags span{
+    background: transparent;
+    border: 1px solid #e77b33;
+    color: #e77b33;
+    margin-right: 0.5rem;
+    padding: 4px;
+    font-size: 0.7rem;
+    border-radius: 3px ;
+}
+
+.container_startup .main_info .founder_bio .founder_tags {
+    margin-top: 6px;
+}
+
+.container_startup .founder_info .int_button {
+    margin-top: 45px;
+}
+
+.container_startup .founder_info .int_button a{
+    border-color: #e77b33;
+    background-color: #e77b33;
+    color: #fff !important;
+    transition: all 0.5s;
+    padding: 7px 10px;
+    border-radius: 3px;
+}
+
+.container_startup .founder_info .int_button a i{
+    margin-right: 7px;
+    font-size: 0.7rem;
+}
+
+.container_startup .filtering_section form{
+    display: flex;
+}

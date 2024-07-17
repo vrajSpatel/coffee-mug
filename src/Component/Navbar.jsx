@@ -43,7 +43,7 @@ const Navbar = ({ onlyLogo }) => {
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link active link-warning" to="/">
+                  <Link className="nav-link active link-warning" to="/startups">
                     Startups
                   </Link>
                 </li>

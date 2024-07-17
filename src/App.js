@@ -13,7 +13,11 @@ import PostaJob from "./Pages/PostaJob.js";
 import Account from "./Pages/Account.js";
 import { useRef } from "react";
 import Feed from "./Pages/Feed.jsx";
+<<<<<<< HEAD
 import InvestorList from "./Pages/InvestorList.js";
+=======
+import StartUp from "./Pages/StartUp.jsx";
+>>>>>>> 3a1edd1897110583beee60980eb2164b13487f11
 
 function App() {
   const auth_token = useRef("");
@@ -41,7 +45,11 @@ function App() {
             <Route path="/downloadapp" Component={DownloadApp} />
             <Route path="/mentors" Component={Mentor} />
             <Route path="/feed" Component={Feed} />
+<<<<<<< HEAD
             <Route path="/startup-investors" Component={InvestorList} />
+=======
+            <Route path="/startups" Component={StartUp} />
+>>>>>>> 3a1edd1897110583beee60980eb2164b13487f11
           </Routes>
         </BrowserRouter>
       </Messanger>

@@ -20,6 +20,7 @@ const Feed = () => {
 
   return (
     <>
+<<<<<<< HEAD
       <Navbar />
       <div className="mainCover">
         <div className="container_feed">
@@ -53,6 +54,40 @@ const Feed = () => {
                     Members
                   </Link>
                 </li>
+=======
+      <Navbar className='navbar_feed' / >
+      <div className="container_feed">
+        <div className="allsection">
+          <div className="nav_menu">
+            <ul>
+              <li>
+                <Link to="/feed" className="active">
+                  <img
+                    src="https://assets.coffeemug.ai/assets/v2/img/svg/home-color.svg"
+                    alt=""
+                  />
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link to="/jobs">
+                  <img
+                    src="https://assets.coffeemug.ai/assets/v2/img/svg/careers.svg"
+                    alt=""
+                  />
+                  Jobs <span className="badge">new</span>
+                </Link>
+              </li>
+              <li>
+                <Link to="/members">
+                  <img
+                    src="https://assets.coffeemug.ai/assets/v2/img/svg/member.svg"
+                    alt=""
+                  />
+                  Members
+                </Link>
+              </li>
+>>>>>>> 3a1edd1897110583beee60980eb2164b13487f11
 
                 <li>
                   <Link to="/mentors">
@@ -144,6 +179,7 @@ const Feed = () => {
                                   src="https://assets.coffeemug.ai/assets/v2/img/svg/meetings.svg"
                                   alt=""
                                 />
+<<<<<<< HEAD
                                 <p>1 Meetings</p>
                               </div>
                               <div className="mt_item">
@@ -160,6 +196,14 @@ const Feed = () => {
                                 />
                                 <p> Endorsements</p>
                               </div>
+=======
+                              </Link>
+                            </div>
+
+                            <div className="na_na">
+                              <Link>{element.firstName} {element.lastName}</Link>
+                              <Link>Founder</Link>
+>>>>>>> 3a1edd1897110583beee60980eb2164b13487f11
                             </div>
                           </div>
 
