@@ -13,7 +13,11 @@ const StartUp = () => {
             <div className="main_startup">
                 <div className="container_startup">
 
-                    <div className="filtering_section"></div>
+                    <div className="filtering_section">
+                        <form action="">
+                        
+                        </form>
+                    </div>
 
                     <div className="startup_posts">
 

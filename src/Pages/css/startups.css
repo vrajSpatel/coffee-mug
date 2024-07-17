@@ -166,3 +166,7 @@ a:hover {
     margin-right: 7px;
     font-size: 0.7rem;
 }
+
+.container_startup .filtering_section form{
+    display: flex;
+}
