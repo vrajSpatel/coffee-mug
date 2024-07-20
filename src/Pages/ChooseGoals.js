@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import Navbar from "../Component/Navbar";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import SignupModal from "../Component/SignupModal";
 import "./css/ChooseGoals.css";
 import Goals from "../Component/Goals";
@@ -10,9 +10,17 @@ import CompleteProfile from "../Component/CompleteProfile";
 import apiContext from "../Context/apiContext";
 
 function ChooseGoals({ page }) {
-
-  const { signup } = useContext(apiContext);
-
+  const navigator = useNavigate();
+  const { updateUserDetailsAPI } = useContext(apiContext);
+  const [profileData, setProfileData] = useState({
+    firstName: "",
+    lastName: "",
+    designation: "",
+    company: "",
+    city: "1",
+    mobile: "",
+    description: "",
+  });
   return (
     <>
       <Navbar onlyLogo={true} />
@@ -43,7 +51,12 @@ function ChooseGoals({ page }) {
             {page === 1 && <Goals />}
             {page === 2 && <IndustriesSignup />}
             {page === 3 && <RolesSignup />}
-            {page === 4 && <CompleteProfile />}
+            {page === 4 && (
+              <CompleteProfile
+                profileData={profileData}
+                setProfileData={setProfileData}
+              />
+            )}
           </div>
         </div>
       </div>
@@ -79,7 +92,21 @@ function ChooseGoals({ page }) {
             </Link>
           </div>
         )}
-        {page === 4 && <Link className="continueButton">Continue</Link>}
+        {page === 4 && (
+          <Link
+            className="continueButton"
+            onClick={async () => {
+              const res = await updateUserDetailsAPI(profileData);
+              if (res.error) {
+                console.log(res.error);
+              } else if (res.acknowledged) {
+                navigator("/feed");
+              }
+            }}
+          >
+            Continue
+          </Link>
+        )}
         <SignupModal />
       </div>
     </>

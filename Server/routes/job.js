@@ -34,7 +34,6 @@ router.post("/postjob", fetchuser, async (req, res) => {
     } = req.body;
 
     const email = req.user.email;
-    console.log(email);
     const job = await Jobs.create({
       //send data to database
       email,
@@ -62,7 +61,6 @@ router.post("/postjob", fetchuser, async (req, res) => {
 router.post("/recommendedjobs", async (req, res) => {
   try {
     const { Roles, Industries, Seniority, minExp, MaxExp, Location } = req.body;
-    console.log(req.body);
     const finded = await Jobs.aggregate([
       {
         $match: {
@@ -143,6 +141,7 @@ router.post("/fetchfeed", fetchuser, async (req, res) => {
     const email = req.user.email;
 
     var result = await User.findOne({ email });
+    console.log(result);
 
     var result2 = await User.aggregate([
       {
@@ -163,7 +162,7 @@ router.post("/fetchfeed", fetchuser, async (req, res) => {
 router.post("/investorlist", async (req, res) => {
   try {
     const { Roles, Industries, Seniority, Location } = req.body;
-    console.log(req.body);
+
     var finded;
     if (
       Roles.length === 0 &&
@@ -186,7 +185,6 @@ router.post("/investorlist", async (req, res) => {
         },
       ]);
     }
-    console.log(finded);
     res.json(finded);
   } catch (error) {
     res.status(400).json(error);

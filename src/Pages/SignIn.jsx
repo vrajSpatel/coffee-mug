@@ -95,9 +95,15 @@ const SignIn = () => {
                   id="mainlogin"
                   className="btn btn-lg"
                   onClick={async () => {
-                    console.log(
-                      await signinAPI(userdata.email, userdata.password)
+                    const res = await signinAPI(
+                      userdata.email,
+                      userdata.password
                     );
+                    if (res.error) {
+                      console.log(res.error);
+                    } else if (res.auth_token) {
+                      nevi("/feed");
+                    }
                   }}
                 >
                   Login

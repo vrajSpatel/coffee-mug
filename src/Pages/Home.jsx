@@ -26,7 +26,7 @@ const Home = () => {
   const { auth_token } = useContext(apiContext);
   const navigation = useNavigate();
   useEffect(() => {
-    if (auth_token !== "") {
+    if (auth_token.current !== "") {
       navigation("/feed");
     }
   });
@@ -223,9 +223,9 @@ const Home = () => {
           </div>
         </div>
 
-        <div className="contectsforyou">
+        {/* <div className="contectsforyou">
           <Carousal1Home />
-        </div>
+        </div> */}
 
         <div className="our_member_section">
           <div className="container_members">
@@ -466,7 +466,6 @@ const Home = () => {
                       <img
                         src="https://assets.coffeemug.ai/assets/web-assets/home-v3/images/social_img/lenskart-logo.png"
                         alt=""
-                        lenskart
                       />
                     </a>
                   </div>
@@ -542,7 +541,6 @@ const Home = () => {
                       <img
                         src="https://assets.coffeemug.ai/assets/web-assets/home-v3/images/social_img/lenskart-logo.png"
                         alt=""
-                        lenskart
                       />
                     </a>
                   </div>

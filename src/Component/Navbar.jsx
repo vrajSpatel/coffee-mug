@@ -1,9 +1,22 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
 import coffeemuglogo from "../assests/coffee-mug_logo.png";
 import "./css/navbar.css";
 import { Link } from "react-router-dom";
+import apiContext from "../Context/apiContext";
 
 const Navbar = ({ onlyLogo }) => {
+  const { fetchUserDetailsAPI, auth_token } = useContext(apiContext);
+  const [firstName, setFirstName] = useState("");
+  useEffect(() => {
+    if (auth_token.current !== "") {
+      const func = async () => {
+        const res = await fetchUserDetailsAPI();
+        setFirstName(res.firstName);
+      };
+      func();
+    }
+  }, [auth_token]);
+
   return (
     <nav className="navbar navbar-expand-lg navbar-light ">
       <div className="container-fluid">
@@ -70,9 +83,15 @@ const Navbar = ({ onlyLogo }) => {
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="btn btn-outline-orange" to="/signin">
-                    Login
-                  </Link>
+                  {firstName === "" ? (
+                    <Link className="btn btn-outline-orange" to="/signin">
+                      Login
+                    </Link>
+                  ) : (
+                    <Link className="btn btn-outline-orange" to="/account">
+                      {firstName}
+                    </Link>
+                  )}
                 </li>
               </ul>
             </div>

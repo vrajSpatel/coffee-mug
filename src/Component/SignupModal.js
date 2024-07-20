@@ -1,11 +1,12 @@
 import React, { useContext, useRef } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./css/SignupModal.css";
 import apiContext from "../Context/apiContext";
 
 const SignupModal = () => {
   const { goals, roles, industries, signupData, setSignupData, signupAPI } =
     useContext(apiContext);
+  const navigator = useNavigate();
 
   const processRef = useRef();
   const changeSignupData = (e) => {
@@ -15,8 +16,12 @@ const SignupModal = () => {
   };
 
   const signupHandler = async () => {
-    // console.log(goals, roles, industries);
-    console.log(await signupAPI(goals, roles, industries, signupData));
+    const res = await signupAPI(goals, roles, industries, signupData);
+    if (res.error) {
+      console.log(res.error);
+    } else if (res.auth_token) {
+      navigator("/process-profile");
+    }
   };
 
   return (

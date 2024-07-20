@@ -1,19 +1,24 @@
 import React, { useContext, useState, useEffect } from "react";
 import "./css/feed.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Navbar from "../Component/Navbar";
 import Footer from "../Component/Footer";
 import apiContext from "../Context/apiContext";
 
 const Feed = () => {
-  const { fetchFeedApi, auth_token } = useContext(apiContext);
+  const { fetchFeedApi, auth_token, profileImageFolderUrl } =
+    useContext(apiContext);
+  const navigation = useNavigate();
 
   const [feedData, setfeedData] = useState();
   useEffect(() => {
+    if (auth_token.current === "") {
+      navigation("/");
+    }
+  }, [auth_token]);
+  useEffect(() => {
     const func1 = async function () {
       setfeedData(await fetchFeedApi());
-
-      console.log(await fetchFeedApi());
     };
     func1();
   }, [auth_token]);
@@ -103,7 +108,7 @@ const Feed = () => {
                 </li>
               </ul>
             </div>
-            
+
             <div className="mid_feed">
               {feedData?.map((element) => {
                 console.log(element);
@@ -126,7 +131,10 @@ const Feed = () => {
                             <div className="na_image">
                               <div className="image_na">
                                 <Link>
-                                  <img src={element?.profileImage} alt="" />
+                                  <img
+                                    src={`${profileImageFolderUrl.current}${element?.profileImage}`}
+                                    alt=""
+                                  />
                                 </Link>
                               </div>
 

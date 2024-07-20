@@ -16,6 +16,7 @@ const RecommendedJobs = () => {
     jobs,
     setJobs,
     fetchRecommendedJobsAPI,
+    profileImageFolderUrl,
   } = useContext(apiContext);
   const [seniority] = useState({
     seniority: {
@@ -217,7 +218,7 @@ const RecommendedJobs = () => {
                       <div className="sectionCover">
                         <div className="profileImage">
                           <img
-                            src={element.profiledetails.profileImage}
+                            src={`${profileImageFolderUrl.current}${element.profiledetails.profileImage}`}
                             alt="profileImage"
                           />
                         </div>
