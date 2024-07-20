@@ -7,7 +7,8 @@ import "./css/InvestorList.css";
 import { Link } from "react-router-dom";
 
 const InvestorList = () => {
-  const { roles, industries, fetchInvestorListApi } = useContext(apiContext);
+  const { roles, industries, fetchInvestorListApi, profileImageFolderUrl } =
+    useContext(apiContext);
   useEffect(() => {
     const func = async () => {
       setInvestorList(await fetchInvestorListApi(investorFilters));
@@ -181,7 +182,11 @@ const InvestorList = () => {
                         <div className="na_image">
                           <div className="image_na">
                             <Link>
-                              <img src={element?.profileImage} alt="" />
+                              <img
+                                // src={element?.profileImage}
+                                src={`${profileImageFolderUrl.current}${element?.profileImage}`}
+                                alt=""
+                              />
                             </Link>
                           </div>
 

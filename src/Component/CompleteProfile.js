@@ -1,20 +1,11 @@
 import React, { useState } from "react";
 import LocationSelect from "./LocationSelect";
 
-const CompleteProfile = () => {
-  const [profileData, setProfileData] = useState({
-    firstName: "",
-    lastName: "",
-    designation: "",
-    company: "",
-    city: "1",
-    mobile: "",
-    description: "",
-  });
+const CompleteProfile = ({ profileData, setProfileData }) => {
+  
 
   const changeProfileData = (e) => {
     setProfileData((data) => {
-      console.log(data);
       return {
         ...data,
         [e.target.name]: e.target.value,
@@ -73,7 +64,10 @@ const CompleteProfile = () => {
         <div className="cityDetails">
           <div className="smappTitle">City *</div>
           <div className="inputs">
-          <LocationSelect value={profileData.city} change={changeProfileData}/>
+            <LocationSelect
+              value={profileData.city}
+              change={changeProfileData}
+            />
           </div>
         </div>
         <div className="mobileDetails">

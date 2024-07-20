@@ -82,14 +82,13 @@ router.post("/createUser", async (req, res) => {
     res.json({ auth_token, processProfile: false });
   } catch (error) {
     console.error(error);
-    res.status(500).send("some error occure while creating user");
+    res.status(500).json({ error: "some error occure while creating user" });
   }
 });
 
 // route 2 : Authenticate the user using : POST "api/auth/login"  (no login required)
 router.post("/login", async (req, res) => {
   const { email, password } = req.body;
-  console.log(req.body);
   try {
     let auth = await Authenticate.findOne({ email });
     if (!auth) {
@@ -104,7 +103,6 @@ router.post("/login", async (req, res) => {
     const data = {
       email: req.body.email,
     };
-    console.log(data);
     const auth_token = jwt.sign(data, jwt_secret);
     res.json({ auth_token });
   } catch (error) {
@@ -113,11 +111,10 @@ router.post("/login", async (req, res) => {
   }
 });
 
-// route 3 : get logged in user's detail using POST "api/auth/getuser"  (login required)
-router.post("/getUser", fetchuser, async (req, res) => {
+router.post("/getUserData", fetchuser, async (req, res) => {
   try {
     const useremail = req.user.email;
-    const user = await User.find({ email: useremail }).select("-password"); // it means it will get all data excepts password
+    const user = await User.find({ email: useremail });
     res.send(user);
   } catch (error) {
     console.error(error);
@@ -150,7 +147,6 @@ router.post("/setupProfile", fetchuser, async (req, res) => {
         desciption,
       }
     );
-    console.log(user1);
     if (user1.matchedCount === 1) {
       res.json({ success: "Profile data inserted successfully!" });
     } else {
@@ -171,6 +167,8 @@ router.post("/updateUserDetails", fetchuser, async (req, res) => {
         const profileImage = req.file?.filename;
         const Useremail = req.user.email;
         var {
+          firstName,
+          lastName,
           description,
           roles,
           industries,
@@ -198,6 +196,8 @@ router.post("/updateUserDetails", fetchuser, async (req, res) => {
             city: city ? city : undefined,
             email: email ? email : undefined,
             mobile: mobile ? mobile : undefined,
+            firstName: firstName ? firstName : undefined,
+            lastName: lastName ? lastName : undefined,
           }
         );
         res.json(result);

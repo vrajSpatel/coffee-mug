@@ -3,7 +3,7 @@ import apiContext from "./apiContext";
 
 const Messanger = ({ children, auth_token }) => {
   const url = "http://localhost:5000";
-
+  const profileImageFolderUrl = useRef("http://localhost:5000/profileImage/");
   const cookieSetter = (name, value) => {
     document.cookie = `${name}=${value};max-age=${3600 * 24 * 10}`;
   };
@@ -367,12 +367,24 @@ const Messanger = ({ children, auth_token }) => {
     console.log(result);
     setJobs(result);
   };
-
+  const fetchUserDetailsAPI = async () => {
+    var result = [];
+    if (auth_token.current !== "") {
+      result = await fetch(`${url}/api/auth/getUserData`, {
+        method: "POST",
+        headers: {
+          auth_token: auth_token.current,
+        },
+      });
+      result = await result.json(); 
+      return result[0];
+    }
+  };
   const updateUserDetailsAPI = async (userData) => {
+    console.log(userData);
     const data = new FormData();
     Object.keys(userData).forEach((element) => {
-      if (typeof userData[element] === "object") {
-        console.log("object");
+      if (typeof userData[element] === "object" && element !== "profileImage") {
         userData[element] = JSON.stringify(userData[element]);
       }
       data.append(element, userData[element]);
@@ -384,6 +396,8 @@ const Messanger = ({ children, auth_token }) => {
       },
       body: data,
     });
+    result = await result.json();
+    return result;
   };
 
   const fetchFeedApi = async () => {
@@ -416,16 +430,11 @@ const Messanger = ({ children, auth_token }) => {
       return [];
     }
   };
-  // fetchInvestorListApi({
-  //   Roles: ["Founder"],
-  //   Industries: [],
-  //   Seniority: [],
-  //   Location: "",
-  // });
 
   return (
     <apiContext.Provider
       value={{
+        profileImageFolderUrl,
         auth_token,
         cookieFetcher,
         signupData,
@@ -445,6 +454,7 @@ const Messanger = ({ children, auth_token }) => {
         signupAPI,
         signinAPI,
         fetchRecommendedJobsAPI,
+        fetchUserDetailsAPI,
         postJobAPI,
         updateUserDetailsAPI,
         fetchFeedApi,
