@@ -1,0 +1,33 @@
+* {
+  /** Dark theme primary colors */
+  --color-primary-a0: #0081b8;
+  --color-primary-a10: #3d8ec0;
+  --color-primary-a20: #5c9cc8;
+  --color-primary-a30: #76a9d0;
+  --color-primary-a40: #8eb7d8;
+  --color-primary-a50: #a5c5df;
+
+  /** Dark theme surface colors */
+  --color-surface-a0: #121212;
+  --color-surface-a10: #282828;
+  --color-surface-a20: #3f3f3f;
+  --color-surface-a30: #575757;
+  --color-surface-a40: #717171;
+  --color-surface-a50: #8b8b8b;
+
+  /** Dark theme mixed surface colors */
+  --color-surface-mixed-a0: #26201b;
+  --color-surface-mixed-a10: #3b3530;
+  --color-surface-mixed-a20: #504b46;
+  --color-surface-mixed-a30: #817b7b;
+  --color-surface-mixed-a40: #989595;
+  --color-surface-mixed-a50: #ffffff;
+  color: var(--color-surface-mixed-a50);
+}
+a {
+  color: var(--color-primary-a0);
+  text-decoration: none;
+}
+a:hover {
+  color: var(--color-primary-a40);
+}

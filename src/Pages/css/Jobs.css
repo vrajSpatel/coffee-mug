@@ -4,6 +4,7 @@
   align-items: center;
   flex-direction: column;
   gap: 1rem;
+  background: var(--color-surface-a0);
 }
 
 .jobsTitle {
@@ -40,6 +41,10 @@
   height: 35px !important;
   width: 100%;
 }
+.whatInput {
+  background: var(--color-surface-a0);
+  color: var(--color-surface-mixed-a50);
+}
 .whatInput:focus {
   outline: none;
   box-shadow: 0 !important;
@@ -49,9 +54,12 @@
   gap: 1rem;
   height: 100%;
 }
+
 .experienceCover > select {
   width: 90%;
   border: none !important;
+  background: var(--color-surface-a0);
+  color: var(--color-surface-mixed-a50);
 }
 .searchBox > div > select:focus {
   outline: none;
@@ -59,22 +67,27 @@
 .locationCover > select {
   width: 100%;
   border: none !important;
+  background: var(--color-surface-a0);
+  color: var(--color-surface-mixed-a50);
 }
 .searchButton {
   grid-template-columns: 1fr !important;
   place-items: center;
-  border: none !important   ;
+  border: none !important;
 }
+/* .searchButton > a {
+  background: var(--color-primary-a0);
+} */
 .searchButton > a:hover {
-  background: white;
-  color: #e77b35;
-  border: 1px solid #e77b35;
+  background: var(--color-surface-mixed-a50);
+  color: var(--color-primary-a0);
+  border: 1px solid var(--color-primary-a0);
 }
 .searchButton > a {
-  background: #e77b35;
+  background: var(--color-primary-a0);
   height: 100%;
   width: 100%;
-  color: white;
+  color: var(--color-surface-mixed-a50);
   text-decoration: none;
   font-size: 0.9rem;
   border-radius: 10px;
@@ -110,18 +123,19 @@
   justify-content: center;
   align-items: center;
   text-decoration: none;
-  color: black;
+  color: var(--color-surface-mixed-a50);
   display: grid;
   grid-auto-flow: column;
   gap: 10px;
   border-radius: 10px 0 10px 0;
-  box-shadow: 0 0 10px -8px black;
+  box-shadow: 0 0 10px -8px var(--color-surface-mixed-a50);
   transition: box-shadow 0.2s linear;
   cursor: pointer;
 }
 .firstRow > a:hover,
 .secondRow > a:hover {
-  box-shadow: 0 0 10px -4px black;
+  box-shadow: 0 0 10px -4px var(--color-surface-mixed-a50);
+  color: var(--color-primary-a0);
 }
 .firstRow > a > img,
 .secondRow > a > img {
@@ -129,12 +143,12 @@
   width: 40px;
   padding: 5px;
   border-radius: 50%;
-  background: rgba(135, 207, 235, 0.279);
+  background: var(--color-surface-a50);
 }
 .firstRow > a > i,
 .secondRow > a > i {
   font-size: 0.8rem;
-  color: rgba(128, 128, 128, 0.452);
+  color: var(--color-surface-mixed-a50);
 }
 
 .jobsByIndustriesCover {
@@ -162,7 +176,8 @@
 .industriesMain > .industry {
   padding: 1rem;
   width: 150px;
-  color: black;
+  color: var(--color-surface-mixed-a50);
+  background: var(--color-surface-a10);
   text-decoration: none;
   /* border: 1px solid gray; */
   display: flex;
@@ -170,13 +185,16 @@
   justify-content: center;
   align-items: center;
   border-radius: 5px;
-  box-shadow: 0px 0px 7px -3px black;
+  box-shadow: 0px 0px 7px -3px var(--color-surface-mixed-a50);
   transition: all 0.1s linear;
+}
+.industriesMain > .industry > img {
+  filter: invert(100%);
 }
 .industriesMain > .industry:hover {
   width: 153px;
   margin: 0 -1 0.5px;
-  box-shadow: 0 0 7px -1px black;
+  box-shadow: 0 0 7px -1px var(--color-surface-mixed-a50);
 }
 .industry > img {
   height: 50px;
@@ -185,7 +203,7 @@
 .registerNowNotice > a,
 .postAJobNotice > a {
   text-decoration: none;
-  color: #e77b35;
+  color: var(--color-primary-a0);
   font-weight: 700;
 }
 
@@ -209,7 +227,7 @@
 }
 
 .titleCover > a {
-  color: #e77b35;
+  color: var(--color-primary-a0);
   text-decoration: none;
   font-weight: 700;
 }
@@ -224,13 +242,14 @@
 }
 
 .companiesGrid > a {
-  box-shadow: 0 0 7px -3px black;
+  box-shadow: 0 0 7px -3px var(--color-surface-mixed-a50);
   border-radius: 5px;
   padding: 5px;
   transition: all 0.1s linear;
+  background: var(--color-surface-mixed-a50);
 }
 .companiesGrid > a:hover {
-  box-shadow: 0 0 7px -2px black;
+  box-shadow: 0 0 7px -2px var(--color-surface-mixed-a50);
 }
 .companiesGrid > a > img {
   height: 100%;
@@ -245,7 +264,7 @@
   gap: 3rem;
   place-items: center;
   grid-template-columns: 143px 1.5fr 1fr;
-  box-shadow: 0 0 10px -7px black;
+  box-shadow: 0 0 10px -7px var(--color-surface-mixed-a50);
   margin: 2rem;
 }
 .hireTalentMain > .midSection {
@@ -259,7 +278,7 @@
   font-weight: 700;
 }
 .hireTalentMain > .midSection > .content {
-  color: rgb(75, 75, 75);
+  color: var(--color-surface-mixed-a40);
 }
 
 .hireTalentMain > .midSection > .postJobButton {
@@ -268,7 +287,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  color: rgb(63, 63, 63);
+  color: var(--color-surface-mixed-a40);
   text-decoration: none;
   padding: 3px;
   border-radius: 15px;
@@ -284,9 +303,9 @@
   gap: 0.5rem;
 }
 .hireTalentMain > .buttonSection > a {
-  background: #e77b35;
+  background: var(--color-primary-a0);
   text-decoration: none;
-  color: white;
+  color: var(--color-surface-mixed-a50);
   font-weight: 700;
   padding: 0.7rem;
   display: grid;
@@ -295,7 +314,7 @@
 }
 .hireTalentMain > .buttonSection > .comment {
   font-size: 0.9rem;
-  color: rgb(71, 71, 71);
+  color: var(--color-surface-mixed-a40);
 }
 
 .howItWorksSection {
@@ -308,8 +327,7 @@
   margin: 2rem 0;
 }
 .showcaseMain > .header {
-  color: #e77b35;
-  background: #e77c3529;
+  color: var(--color-primary-a0);
   width: 65%;
   font-size: 0.9rem;
   padding: 4px;
@@ -327,23 +345,20 @@
 .showcaseMain > img {
   height: 200px;
   width: 200px;
+  filter: invert(100%);
 }
 
 .talentMain {
-  /* border:1px solid black; */
   padding: 2rem 1.5rem;
   border-radius: 2rem 0 2rem 0;
-  box-shadow: 0 0 10px -5px black;
+  box-shadow: 0 0 10px -5px var(--color-surface-mixed-a50);
   height: 20rem;
   width: 100%;
-  color: black;
+  color: var(--color-surface-mixed-a50);
   text-decoration: none;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-}
-.talentMain:hover {
-  color: black;
 }
 
 .talentMain > span > .title {
@@ -359,7 +374,7 @@
   gap: 0.5rem;
 }
 .talentMain > span > .points > .point > i {
-  color: rgba(0, 100, 0, 0.644);
+  color: var(--color-primary-a0);
   text-align: center;
   display: grid;
   place-items: center;
@@ -369,7 +384,7 @@
   font-size: 1rem;
 }
 .talentMain > .footer {
-  color: #e77b35;
+  color: var(--color-primary-a0);
   font-weight: 700;
   font-size: 1.2rem;
 }

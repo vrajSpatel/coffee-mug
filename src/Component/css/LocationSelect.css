@@ -1,0 +1,8 @@
+.locationSelect {
+  background: var(--color-surface-a10);
+}
+.locationSelect:focus,
+.locationSelect:active {
+  outline: none !important;
+  border: 1px solid var(--color-surface-mixed-a50) !important;
+}

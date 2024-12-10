@@ -50,7 +50,7 @@
 }
 .updateCover > .updateContainer > .overflowContainer > h4 {
   width: 100%;
-  color: #e77b33;
+  color: var(--color-primary-a0);
   margin: 0.5rem 0;
 }
 .updateCover > .updateContainer > .overflowContainer > .selectionBox {

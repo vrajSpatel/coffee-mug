@@ -9,12 +9,12 @@ import { Link } from "react-router-dom";
 const InvestorList = () => {
   const { roles, industries, fetchInvestorListApi, profileImageFolderUrl } =
     useContext(apiContext);
-  useEffect(() => {
-    const func = async () => {
-      setInvestorList(await fetchInvestorListApi(investorFilters));
-    };
-    func();
-  }, []);
+  // useEffect(() => {
+  //   const func = async () => {
+  //     setInvestorList(await fetchInvestorListApi(investorFilters));
+  //   };
+  //   func();
+  // }, []);
   const [seniority] = useState({
     seniority: {
       "CXO/C-Suite": 0,
@@ -34,7 +34,15 @@ const InvestorList = () => {
     // MaxExp: "",
   });
 
-  const [investorList, setInvestorList] = useState([]);
+  const [investorList, setInvestorList] = useState([
+    {
+      profileImage: "",
+      firstName: "dharmik patel",
+      lastName: "patel",
+      description: "hello world",
+      objectives: ["nothing", "special"],
+    },
+  ]);
   return (
     <>
       <Navbar />

@@ -1,8 +1,9 @@
-.modal-content{
-    border:none !important;
-    border-radius:2rem;
-    padding:1rem;
-    width:100%;
+.modal-content {
+  border: none !important;
+  border-radius: 2rem;
+  padding: 1rem;
+  width: 100%;
+  background: var(--color-surface-a20);
 }
 
 .modalHeader {
@@ -15,11 +16,14 @@
   font-size: 1.8rem;
 }
 .modalHeader > .loginButton {
-  color: #5a5a5a;
+  color: var(--color-surface-mixed-a50);
 }
 .loginButton > a {
-  color: #e77b35;
+  color: var(--color-primary-a0);
   text-decoration: none;
+}
+.loginButton > a:hover {
+  color: var(--color-primary-a30);
 }
 
 .inputBoxes > input {
@@ -27,46 +31,48 @@
   margin: 1rem 0;
   border-radius: 10px;
   padding: 0 10px;
-  border:1px solid gray;
-  font-size:1.1rem;
+  border: none;
+  font-size: 1.1rem;
+  background: var(--color-surface-a0);
+  color: var(--color-surface-mixed-a50) !important;
 }
 
-.buttonsCover{
-    display:flex;
+.buttonsCover {
+  display: flex;
 
-    justify-content:center;
-    align-items:center;
-    flex-direction:column;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
-.buttonsCover > .signupButton{
-    width:80%;
-    height:2.5rem;
-    border:none;
-    background:#e77b35;
-    color:white !important;
-    border-radius:10px;
-    display:grid;
-    place-items:center;
-    text-decoration:none;
+.buttonsCover > .signupButton {
+  width: 80%;
+  height: 2.5rem;
+  border: none;
+  background: var(--color-primary-a0);
+  color: var(--color-surface-mixed-a50) !important;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  text-decoration: none;
 }
-.buttonsCover > .googleButton{
-    background:white;
+.buttonsCover > .googleButton {
+  background: var(--color-surface-a20);
 
-    color:rgb(57, 57, 57) !important;
-    height:2.5rem;
-    width:80%;
-    border:2px solid gray !important;
-    border-radius:10px;
+  color: var(--color-primary-a0) !important;
+  height: 2.5rem;
+  width: 80%;
+  border: 2px solid var(--color-primary-a0) !important;
+  border-radius: 10px;
 }
-.buttonsCover > span{
-    margin:.6rem 0;
+.buttonsCover > span {
+  margin: 0.6rem 0;
 }
 
-.signupFooter{
-    font-size:.9rem;
-    margin:1.5rem 0 0 0;
-    color:#5a5a5a;
+.signupFooter {
+  font-size: 0.9rem;
+  margin: 1.5rem 0 0 0;
+  color: var(--color-surface-mixed-a50);
 }
-.signupFooter > a{
-    color:#5a5a5a;
+.signupFooter > a {
+  color: var(--color-primary-a0);
 }

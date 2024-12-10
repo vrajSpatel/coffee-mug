@@ -1,6 +1,6 @@
 .selectContainerMain {
   width: 100%;
-  border: 1px solid gray;
+  border: 1px solid var(--color-surface-mixed-a50);
   padding: 3px 5px;
   border-radius: 7px;
   position: relative;
@@ -11,29 +11,29 @@
 }
 
 .displayOption {
-  border: 1px solid black;
-  background: rgb(206, 206, 206);
+  border: 1px solid var(--color-surface-mixed-a50);
+  background: var(--color-surface-a20);
   padding: 3px 5px;
   border-radius: 7px;
-  display:grid;
-  place-items:center;
-  grid-auto-flow:column;
-  gap:10px;
+  display: grid;
+  place-items: center;
+  grid-auto-flow: column;
+  gap: 10px;
 }
 .displayOption > i {
   position: relative;
-  font-size:.9rem;
-  height:100%;
-  display:grid;
-  place-items:center;
+  font-size: 0.9rem;
+  height: 100%;
+  display: grid;
+  place-items: center;
 }
 .displayOption > i::after {
   content: "";
-  position:absolute;
-  height:100%;
-  width:1px;
-  background:rgba(0, 0, 0, 0.429);
-  left:-5px;
+  position: absolute;
+  height: 100%;
+  width: 1px;
+  background: var(--color-surface-mixed-a40);
+  left: -5px;
 }
 .search {
   height: auto !important;
@@ -41,6 +41,7 @@
   border: none !important;
   width: 50%;
   margin: 0 !important;
+  background: var(--color-surface-a10);
 }
 .search:focus {
   outline: none;
@@ -50,11 +51,12 @@
   top: 100%;
   left: 0;
   width: 100%;
-  overflow: scroll;
+  overflow-y: scroll;
+  overflow-x: hidden;
   max-height: 13rem;
-  background: white;
+  background: var(--color-surface-a20);
   user-select: none;
-  z-index:1;
+  z-index: 1;
 }
 .optionsContainer > div {
   height: 2.2rem;
@@ -64,6 +66,5 @@
 }
 
 .selected {
-  background: rgb(175, 175, 175);
+  background: var(--color-surface-a50);
 }
-

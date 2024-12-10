@@ -15,7 +15,7 @@ import { useRef } from "react";
 import Feed from "./Pages/Feed.jsx";
 import InvestorList from "./Pages/InvestorList.js";
 import StartUp from "./Pages/StartUp.jsx";
-
+import "./App.css";
 function App() {
   const auth_token = useRef("");
 

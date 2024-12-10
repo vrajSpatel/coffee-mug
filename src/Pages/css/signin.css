@@ -3,13 +3,13 @@
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #212529;
+  color: var(--color-surface-mixed-a50);
   text-align: left;
-  background-color: #fff;
+  background-color: var(--color-surface-a0);
 }
 
 .left_signin {
-  background-color: #f6f3f2;
+  background-color: var(--color-surface-a20);
   height: 100vh;
   width: 41.4%;
   display: flex;
@@ -87,18 +87,18 @@ h2 span {
 .right_header h2 {
   font-weight: 400;
   font-size: 36px;
-  color: #252424;
+  color: var(--color-surface-mixed-a50);
   letter-spacing: -1.2px;
 }
 
 .stepj h3 {
   font-size: 1rem;
-  color: #5a5a5a;
+  color: var(--color-surface-mixed-a50);
   font-weight: 600;
 }
 
 .stepj a {
-  color: #e77b35;
+  color: var(--color-primary-a0);
   font-size: 1rem;
   font-weight: 600;
   position: relative;
@@ -139,9 +139,12 @@ input {
 }
 
 .forgotpass a {
-  color: #e77b35;
+  color: var(--color-primary-a0);
   text-decoration: none;
   font-weight: 600;
+}
+.forgotpass a:hover {
+  color: var(--color-primary-a20);
 }
 
 .loginoption_buttons button {
@@ -161,9 +164,9 @@ input {
 button {
   /* font-weight: 700 !important; */
   font-size: 16px !important;
-  border-color: #e77b35 !important;
+  border-color: var(--color-primary-a0) !important;
   border-width: 2px !important;
-  color: #e77b35 !important;
+  color: var(--color-primary-a0) !important;
 }
 
 button :hover {
@@ -171,20 +174,20 @@ button :hover {
 }
 
 #mainlogin {
-  background-color: #e77b35;
-  color: #fff !important;
+  background-color: var(--color-primary-a0);
+  color: var(--color-surface-mixed-a50) !important;
   font-weight: 200 !important;
 }
 
 #otplogin:hover {
-  background-color: #e77b35;
-  color: #fff !important;
+  background-color: var(--color-primary-a0);
+  color: var(--color-surface-mixed-a50) !important;
   font-weight: 200 !important;
 }
 
 #mainlogin:hover {
   background-color: transparent;
-  color: #e77b35 !important;
+  color: var(--color-primary-a0) !important;
   font-weight: 700 !important;
 }
 
@@ -208,7 +211,7 @@ button :hover {
 }
 
 .right_header_phone a {
-  color: #e77b35;
+  color: var(--color-primary-a0);
   font-size: 1.1rem;
   font-weight: 300;
   position: relative;
@@ -218,7 +221,7 @@ button :hover {
 }
 
 .right_header_phone a:hover {
-  color: #212529;
+  color: var(--color-surface-mixed-a50);
 }
 
 .mainform_phone {
@@ -238,13 +241,13 @@ button :hover {
   margin-top: 1.5rem;
   width: 99%;
   height: 3rem;
-  background-color: #e77b35;
-  color: #fff !important;
+  background-color: var(--color-primary-a0);
+  color: var(--color-surface-mixed-a50) !important;
 }
 
 .mainform_phone button:hover {
   background-color: transparent;
-  color: #e77b35 !important;
+  color: var(--color-primary-a0) !important;
 }
 
 .sumbutton_phone {

@@ -1,5 +1,5 @@
 .chooseGoalsMain {
-  background: #f6f3f2;
+  background: var(--color-surface-a0);
   height: calc(100vh - 162px);
   overflow-y: scroll;
   position: relative;
@@ -13,17 +13,17 @@
   padding: 16px 24px;
   display: grid;
   place-items: center;
-  background: #fff;
+  background: var(--color-surface-a0);
   box-shadow: 0 -5px 10px -10px rgba(0, 0, 0, 0.273);
 }
 
 .continueButtonArea > .continueButton {
   border: none;
   height: 48px;
-  background: #e77b35;
+  background: var(--color-primary-a0);
   width: 400px;
   border-radius: 10px;
-  color: #fff !important;
+  color: var(--color-surface-a0) !important;
   font-weight: 700;
   font-size: 1.2rem;
   display: grid;
@@ -69,8 +69,8 @@
 }
 
 .progressLine > .name > div {
-  color: white;
-  background: #000;
+  color: var(--color-surface-a0);
+  background: var(--color-surface-mixed-a50);
   font-size: 0.7rem;
   height: 1rem;
   width: 1rem;
@@ -90,14 +90,14 @@
   content: "";
   height: 1px;
   width: 100%;
-  border: 1px dashed black;
+  border: 1px dashed var(--color-surface-mixed-a50);
   position: absolute;
   bottom: 50%;
   left: 0;
 }
 
 .optionSelectorMain {
-  background: #fff;
+  background: var(--color-surface-a10);
   border: 1px solid rgba(128, 128, 128, 0.562);
   padding: 1.5rem;
   border-radius: 2rem;
@@ -124,6 +124,7 @@
 
 .options > div {
   cursor: pointer;
+  background: var(--color-surface-a20);
 }
 
 .nonHighlighted {
@@ -141,17 +142,17 @@
 }
 
 .highlighted {
-  border: 2px solid #5a9191;
+  border: 2px solid var(--color-primary-a20);
   border-radius: 7px;
   display: flex;
   justify-content: start;
   align-items: center;
   padding: 10px;
-  color: #5a9191;
+  color: var(--color-primary-a20);
 }
 
 .text a {
-  color: #e77b35;
+  color: var(--color-primary-a0);
   font-size: 1rem;
   font-weight: 600;
   position: relative;
@@ -213,22 +214,22 @@
 }
 
 .continueBinder > .prevButton {
-  border: 2px solid #e77b35;
-  color: #e77b35 !important;
+  border: 2px solid var(--color-primary-a0);
+  color: var(--color-primary-a0) !important;
   border-radius: 7px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .continueBinder > .prevButton > i {
-  color: #e77b35 !important;
+  color: var(--color-primary-a0) !important;
   font-size: 0.9rem;
   margin: 0 0.3rem 0 0;
 }
 .continueBinder > .continueButton {
   border-radius: 10px;
-  background: #e77b35;
-  color: #fff !important;
+  background: var(--color-primary-a0);
+  color: var(--color-surface-a0) !important;
 }
 
 .rolesOptionsMain {
@@ -274,10 +275,10 @@
   backdrop-filter: blur(2px);
 }
 
-.profileInfoMain{
-display:grid;
-grid-template-columns: 1fr;
-gap:.7rem;
+.profileInfoMain {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.7rem;
 }
 
 .smallTitle {
@@ -302,5 +303,5 @@ gap:.7rem;
   height: 3rem;
   border-radius: 10px;
   border: 1px solid gray;
-  padding:0 .5rem
+  padding: 0 0.5rem;
 }

@@ -1,21 +1,28 @@
 .mainInvestorsCover {
-  background: #f6f3f2;
+  background: var(--color-surface-a0);
   padding: 0 10%;
   display: grid;
   grid-auto-flow: column;
   grid-template-columns: 2fr 5fr 2fr;
   gap: 2rem;
 }
+.mainTitle {
+  background: var(--color-surface-a0);
+}
 .mainInvestorsCover > .jobsFilters {
   width: 100%;
+  background: var(--color-surface-a10);
+}
+.mainInvestorsCover > .jobsFilters > div > div > input {
+  background: transparent;
 }
 .mid_feed {
   width: 100%;
 }
 .mid_feed .card_investor {
   padding: 24px;
-  background: #ffffff;
-  border: 1px solid #e0e0e0;
+  background: var(--color-surface-a10);
+  border: 1px solid var(--color-surface-a20);
   border-radius: 10px;
   margin-bottom: 1.4rem;
 }
@@ -26,16 +33,16 @@
   font-weight: 400;
   font-size: 24px;
   line-height: 32px;
-  color: #252424;
+  color: var(--color-surface-mixed-a50);
 }
 .mid_feed .card_investor .header_name span a {
   margin-left: 0.4rem;
-  color: #e77b35;
+  color: var(--color-primary-a0);
 }
 .mid_feed .card_investor .info_person {
   padding: 16px;
   height: auto;
-  background: #f6f3f2;
+  background: var(--color-surface-a10);
   border-radius: 10px;
 }
 .mid_feed .card_investor .info_person .head_cont_p {
@@ -66,7 +73,7 @@
   font-size: 12px;
   line-height: 18px;
   text-align: center;
-  color: #424242;
+  color: var(--color-surface-mixed-a50);
 }
 
 .mid_feed .card_investor .info_person .na_image {
@@ -99,7 +106,7 @@
 }
 
 .mid_feed .card_investor .info_person .bio_post a {
-  color: #e77b35;
+  color: var(--color-primary-a0);
 }
 
 .mid_feed .card_investor .info_person .gole_container {
@@ -113,7 +120,7 @@
   font-weight: 600;
   font-size: 16px;
   line-height: 24px;
-  color: #252424;
+  color: var(--color-surface-mixed-a50);
   display: flex;
   align-items: baseline;
   gap: 10px;
@@ -149,8 +156,8 @@
   flex-direction: column;
   border-radius: 1rem;
   padding: 1rem;
-  border: 1px solid #e77b35;
-  background: white;
+  border: 1px solid var(--color-primary-a0);
+  background: var(--color-surface-a10);
   gap: 1.4rem;
 }
 .profileCover {
@@ -169,7 +176,7 @@
   flex-direction: column;
 }
 
-.relationManagerMain>h4 {
+.relationManagerMain > h4 {
   line-height: 2.1rem;
 }
 .relationManagerMain > button {
@@ -177,6 +184,6 @@
   width: 70%;
   border-radius: 5px;
   border: 0px;
-  background:#e77b35;
-  color:white !important;
+  background: var(--color-primary-a0);
+  color: var(--color-surface-mixed-a50) !important;
 }

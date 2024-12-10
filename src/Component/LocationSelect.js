@@ -1,10 +1,15 @@
 import React from "react";
-
+import "./css/LocationSelect.css";
 const LocationSelect = ({ value, change }) => {
   return (
     <>
-      <select name="city" value={value} onChange={change}>
-      <option value="">Select City</option>
+      <select
+        className="locationSelect"
+        name="city"
+        value={value}
+        onChange={change}
+      >
+        <option value="">Select City</option>
         <option value="1">Delhi</option>
         <option value="2">Gurgaon</option>
         <option value="3">Bangalore</option>
