@@ -7,8 +7,10 @@ const fetchuser = require("../Middleware/fetchuser");
 var bcrypt = require("bcryptjs");
 const multer = require("multer");
 const path = require("path");
+require("dotenv").config();
 
-const jwt_secret = "hellooo@";
+
+const jwt_secret = process.env.JWT_SECRET;
 
 const { body, validationResult } = require("express-validator");
 

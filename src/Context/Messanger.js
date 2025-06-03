@@ -3,7 +3,7 @@ import apiContext from "./apiContext";
 
 const Messanger = ({ children, auth_token }) => {
   const url = "http://localhost:5000";
-  const profileImageFolderUrl = useRef("http://localhost:5000/profileImage/");
+  const profileImageFolderUrl = useRef(`${url}/profileImage/`);
   const cookieSetter = (name, value) => {
     document.cookie = `${name}=${value};max-age=${3600 * 24 * 10}`;
   };
